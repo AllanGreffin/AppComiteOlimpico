@@ -9,7 +9,8 @@
     </head>
     <body>
         <div class="container">
-            Você está logado
+            Houve um problema com o login deste usuário. Tente novamente.
+            <a class="btn btn-primary" href="/">Voltar</a>
         </div>
     </body>
 </html>
