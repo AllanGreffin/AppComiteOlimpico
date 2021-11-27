@@ -8,9 +8,11 @@
         <title>Index Page</title>
     </head>
     <body>
-        <div class="container">
-            Você está logado
-        </div>
+        <c:import url="/WEB-INF/jsp/menu.jsp"/>
+        
+        <div class="container">	
+		
+	</div>
     </body>
 </html>
 

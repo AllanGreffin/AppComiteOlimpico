@@ -8,25 +8,31 @@
         <title>Login Page</title>
     </head>
     <body>
-        <div class="container">
-            <form name="login" action="login" method="POST">
-                <div class="form-group">
-                    <label for="name">Nome</label>
-                    <input type="text" id="name" name="name" class="form-control" placeholder="Informe seu nome">
-                </div>
-                <div class="form-group">
-                    <label for="email">Email address</label>
-                    <input type="email" id="email" name="email" class="form-control" placeholder="Entre com seu email">
-                    <small class="form-text text-muted">Este dado não será compartilhado com mais ninguém</small>
-                </div>
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" class="form-control" placeholder="Senha">
-                </div>
-
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
-        </div>
+        <c:import url="/WEB-INF/jsp/menu.jsp"/>
+	
+	<div class="container">
+		<h2>Sistema de Cadastramento de Alunos</h2>
+		
+		<c:if test="${not empty msg}">
+			<div class="alert alert-warning">
+				 <strong>Alerta!</strong> ${msg}
+			</div>
+		</c:if>
+		
+		<form action="/login" method="post">
+			<div class="form-group">
+			  <label>Email:</label>
+			  <input type="email" value="allan.greffin@al.edu.infnet.br" class="form-control" placeholder="Entre com o e-mail" name="email">
+			</div>
+			
+			<div class="form-group">
+			  <label>Senha:</label>
+			  <input type="password" value="xxxxxxxxxxxxxxxx" class="form-control" placeholder="Entre com a senha" name="senha">
+			</div>
+			
+			<button type="submit" class="btn btn-primary">Acessar</button>
+		</form>
+	</div>
     </body>
 </html>
 

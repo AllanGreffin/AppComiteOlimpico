@@ -8,6 +8,7 @@
         <title>Index Page</title>
     </head>
     <body>
+        <c:import url="/WEB-INF/jsp/menu.jsp"/>
         Atletas/index
     </body>
 </html>

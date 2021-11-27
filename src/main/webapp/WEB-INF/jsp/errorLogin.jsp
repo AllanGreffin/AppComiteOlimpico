@@ -8,6 +8,8 @@
         <title>Index Page</title>
     </head>
     <body>
+        <c:import url="/WEB-INF/jsp/menu.jsp"/>
+        
         <div class="container">
             Houve um problema com o login deste usuário. Tente novamente.
             <a class="btn btn-primary" href="/">Voltar</a>
