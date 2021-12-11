@@ -2,9 +2,18 @@
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "TComissao")
 public class Comissao {
     
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long Id;
     private String Nome;
     private Entidade Entidade;

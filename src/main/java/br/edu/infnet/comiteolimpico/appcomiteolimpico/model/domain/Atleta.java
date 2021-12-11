@@ -2,9 +2,21 @@ package br.edu.infnet.comiteolimpico.appcomiteolimpico.model.domain;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "TAtleta")
+@Inheritance(strategy = InheritanceType.JOINED)
 public abstract class Atleta {
     
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected long Id;
     protected String Nome;
     protected boolean Sexo; //true = 1 = homem, false = 0 = mulher

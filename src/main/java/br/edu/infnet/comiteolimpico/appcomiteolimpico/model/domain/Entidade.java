@@ -1,7 +1,17 @@
 package br.edu.infnet.comiteolimpico.appcomiteolimpico.model.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "TEntidade")
 public class Entidade {
     
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long Id;
     private String Nome;
     private String Continente;
