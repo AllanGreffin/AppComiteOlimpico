@@ -1,14 +1,13 @@
 package br.edu.infnet.comiteolimpico.appcomiteolimpico.model.domain;
 
 import br.edu.infnet.comiteolimpico.appcomiteolimpico.model.exceptions.TamanhoUniformeNegativoException;
-import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class Ginastica extends Atleta {
     
     private String Clube;
     private String Especialidade;
-    private int TamanhoUniforme; //faz parte da disputa por equipes ou só individual
+    private int TamanhoUniforme; 
 
     public Ginastica(String Clube, String Especialidade, String TamanhoUniforme, String Nome, String Sexo, String Nascimento) {
         super(Nome, Sexo, Nascimento);

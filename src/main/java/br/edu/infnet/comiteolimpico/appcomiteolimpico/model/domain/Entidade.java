@@ -1,7 +1,5 @@
 package br.edu.infnet.comiteolimpico.appcomiteolimpico.model.domain;
 
-import java.util.Date;
-
 public class Entidade {
     
     private long Id;

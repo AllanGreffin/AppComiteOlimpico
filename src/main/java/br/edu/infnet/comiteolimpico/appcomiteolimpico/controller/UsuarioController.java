@@ -2,8 +2,8 @@ package br.edu.infnet.comiteolimpico.appcomiteolimpico.controller;
 
 import br.edu.infnet.comiteolimpico.appcomiteolimpico.model.domain.Endereco;
 import br.edu.infnet.comiteolimpico.appcomiteolimpico.model.domain.Usuario;
-import br.edu.infnet.comiteolimpico.appcomiteolimpico.services.EnderecoService;
-import br.edu.infnet.comiteolimpico.appcomiteolimpico.services.UsuarioService;
+import br.edu.infnet.comiteolimpico.appcomiteolimpico.model.service.EnderecoService;
+import br.edu.infnet.comiteolimpico.appcomiteolimpico.model.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

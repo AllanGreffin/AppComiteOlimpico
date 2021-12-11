@@ -1,7 +1,6 @@
 package br.edu.infnet.comiteolimpico.appcomiteolimpico.model.domain;
 
 import br.edu.infnet.comiteolimpico.appcomiteolimpico.model.exceptions.TamanhoCalcadoNegativoException;
-import java.time.LocalDateTime;
 
 public class Skate extends Atleta {
     

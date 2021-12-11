@@ -1,7 +1,7 @@
 package br.edu.infnet.comiteolimpico.appcomiteolimpico.controller;
 
 import br.edu.infnet.comiteolimpico.appcomiteolimpico.model.domain.Usuario;
-import br.edu.infnet.comiteolimpico.appcomiteolimpico.services.UsuarioService;
+import br.edu.infnet.comiteolimpico.appcomiteolimpico.model.service.UsuarioService;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;

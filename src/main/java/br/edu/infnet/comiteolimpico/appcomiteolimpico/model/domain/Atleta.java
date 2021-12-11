@@ -15,14 +15,14 @@ public abstract class Atleta {
         boolean sexo = Boolean.parseBoolean(Sexo);
         this.Sexo = sexo;
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        this.Nascimento = LocalDateTime.parse(Nascimento, formatter);;
+        this.Nascimento = LocalDateTime.parse(Nascimento, formatter);
     }
     
     public Atleta(String Nome, boolean Sexo, String Nascimento) {
         this.Nome = Nome;
         this.Sexo = Sexo;
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        this.Nascimento = LocalDateTime.parse(Nascimento, formatter);;
+        this.Nascimento = LocalDateTime.parse(Nascimento, formatter);
     }
 
     public long getId() {

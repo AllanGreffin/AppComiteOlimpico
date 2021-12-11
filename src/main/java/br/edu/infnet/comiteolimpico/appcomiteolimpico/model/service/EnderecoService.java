@@ -1,4 +1,4 @@
-package br.edu.infnet.comiteolimpico.appcomiteolimpico.services;
+package br.edu.infnet.comiteolimpico.appcomiteolimpico.model.service;
 
 import br.edu.infnet.comiteolimpico.appcomiteolimpico.model.domain.Endereco;
 import org.springframework.stereotype.Service;

@@ -1,15 +1,18 @@
 package br.edu.infnet.comiteolimpico.appcomiteolimpico;
 
-import br.edu.infnet.comiteolimpico.appcomiteolimpico.model.domain.Endereco;
-import br.edu.infnet.comiteolimpico.appcomiteolimpico.model.domain.Usuario;
-import br.edu.infnet.comiteolimpico.appcomiteolimpico.services.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
+import br.edu.infnet.comiteolimpico.appcomiteolimpico.model.domain.Endereco;
+import br.edu.infnet.comiteolimpico.appcomiteolimpico.model.domain.Usuario;
+import br.edu.infnet.comiteolimpico.appcomiteolimpico.model.service.UsuarioService;
+
 @Component
-public class DataLoader implements ApplicationRunner {
+@Order(1)
+public class UsuarioLoader implements ApplicationRunner {
 
 	@Autowired
 	private UsuarioService usuarioService;

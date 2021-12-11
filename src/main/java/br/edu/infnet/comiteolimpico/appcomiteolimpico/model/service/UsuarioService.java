@@ -1,4 +1,4 @@
-package br.edu.infnet.comiteolimpico.appcomiteolimpico.services;
+package br.edu.infnet.comiteolimpico.appcomiteolimpico.model.service;
 
 import br.edu.infnet.comiteolimpico.appcomiteolimpico.model.domain.Usuario;
 import br.edu.infnet.comiteolimpico.appcomiteolimpico.model.repositories.UsuarioRepository;

@@ -1,4 +1,4 @@
-package br.edu.infnet.comiteolimpico.appcomiteolimpico.model.tests;
+package br.edu.infnet.comiteolimpico.appcomiteolimpico.model.testes;
 
 import br.edu.infnet.comiteolimpico.appcomiteolimpico.model.domain.Comissao;
 import br.edu.infnet.comiteolimpico.appcomiteolimpico.model.domain.Ginastica;
