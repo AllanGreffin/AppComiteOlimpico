@@ -2,20 +2,16 @@ package br.edu.infnet.comiteolimpico.appcomiteolimpico.model.domain;
 
 import br.edu.infnet.comiteolimpico.appcomiteolimpico.model.exceptions.TamanhoUniformeNegativoException;
 import java.time.format.DateTimeFormatter;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "TGinastica")
 public class Ginastica extends Atleta {
     
     private String Clube;
     private String Especialidade;
     private int TamanhoUniforme; 
-
-    public Ginastica(String Clube, String Especialidade, String TamanhoUniforme, String Nome, String Sexo, String Nascimento) {
-        super(Nome, Sexo, Nascimento);
-        this.Clube = Clube;
-        this.Especialidade = Especialidade;
-        int tamanhoUniforme = Integer.parseInt(TamanhoUniforme);
-        this.TamanhoUniforme = tamanhoUniforme;
-    }
     
     public Ginastica(String Clube, String Especialidade, int TamanhoUniforme, String Nome, boolean Sexo, String Nascimento) {
         super(Nome, Sexo, Nascimento);

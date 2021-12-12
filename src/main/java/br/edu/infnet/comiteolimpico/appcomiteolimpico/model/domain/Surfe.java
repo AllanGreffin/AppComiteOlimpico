@@ -1,21 +1,16 @@
 package br.edu.infnet.comiteolimpico.appcomiteolimpico.model.domain;
 
 import br.edu.infnet.comiteolimpico.appcomiteolimpico.model.exceptions.TamanhoBermudaNegativoException;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "TSurfe")
 public class Surfe extends Atleta {
     
     private boolean OndasGigantes;
     private String MarcaPrancha;
     private int TamanhoBermuda;
-
-    public Surfe(String OndasGigantes, String MarcaPrancha, String TamanhoBermuda, String Nome, String Sexo, String Nascimento) {
-        super(Nome, Sexo, Nascimento);
-        boolean ondasGigantes = Boolean.parseBoolean(OndasGigantes);
-        this.OndasGigantes = ondasGigantes;
-        this.MarcaPrancha = MarcaPrancha;
-        int tamanhoBermuda = Integer.parseInt(TamanhoBermuda);
-        this.TamanhoBermuda = tamanhoBermuda;
-    }
     
     public Surfe(boolean OndasGigantes, String MarcaPrancha, int TamanhoBermuda, String Nome, boolean Sexo, String Nascimento) {
         super(Nome, Sexo, Nascimento);

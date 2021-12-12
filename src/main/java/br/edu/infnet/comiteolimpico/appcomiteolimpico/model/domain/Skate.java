@@ -1,21 +1,16 @@
 package br.edu.infnet.comiteolimpico.appcomiteolimpico.model.domain;
 
 import br.edu.infnet.comiteolimpico.appcomiteolimpico.model.exceptions.TamanhoCalcadoNegativoException;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "TSkate")
 public class Skate extends Atleta {
     
     private String RolamentoPreferido;
     private boolean DisputaXGames;
     private int Calcado;
-
-    public Skate(String RolamentoPreferido, String DisputaXGames, String Calcado, String Nome, String Sexo, String Nascimento) {
-        super(Nome, Sexo, Nascimento);
-        this.RolamentoPreferido = RolamentoPreferido;
-        boolean disputaXGames = Boolean.parseBoolean(DisputaXGames);
-        this.DisputaXGames = disputaXGames;
-        int calcado = Integer.parseInt(Calcado);
-        this.Calcado = calcado;
-    }
     
     public Skate(String RolamentoPreferido, boolean DisputaXGames, int Calcado, String Nome, boolean Sexo, String Nascimento) {
         super(Nome, Sexo, Nascimento);

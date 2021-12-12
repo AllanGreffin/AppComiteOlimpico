@@ -22,6 +22,6 @@ public class AtletaService {
 	}
 	
 	public List<Atleta> obterLista(Usuario usuario){
-		return (List<Atleta>) atletaRepository.findAll(usuario.getId(), Sort.by(Sort.Direction.ASC, "nome"));
+		return (List<Atleta>) atletaRepository.findAll(Sort.by(Sort.Direction.ASC, "nome"));
 	}
 }

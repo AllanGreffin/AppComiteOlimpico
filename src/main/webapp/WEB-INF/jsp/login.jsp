@@ -1,15 +1,16 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-        <title>Login Page</title>
-    </head>
-    <body>
-        <c:import url="/WEB-INF/jsp/menu.jsp"/>
-	
+<head>
+<meta charset="ISO-8859-1">
+<title>Sistema de Gestão de Atletas</title>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+<body>
+
+	<c:import url="/WEB-INF/jsp/menu.jsp"/>
+
 	<div class="container">
 		<h2>Sistema de Cadastramento de Alunos</h2>
 		
@@ -33,6 +34,5 @@
 			<button type="submit" class="btn btn-primary">Acessar</button>
 		</form>
 	</div>
-    </body>
+</body>
 </html>
-

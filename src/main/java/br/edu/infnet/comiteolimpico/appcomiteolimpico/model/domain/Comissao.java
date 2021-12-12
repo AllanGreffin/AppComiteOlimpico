@@ -2,10 +2,14 @@
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -16,7 +20,11 @@ public class Comissao {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long Id;
     private String Nome;
+    @OneToOne(cascade = CascadeType.DETACH) 
+    @JoinColumn(name = "idEntidade")
     private Entidade Entidade;
+    @OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true)
+    @JoinColumn(name = "idAtleta")
     private List<Atleta> Atletas;
 
     public Comissao(String Nome, String nomeEntidade, String continenteEntidade, String populacaoEntidade) {

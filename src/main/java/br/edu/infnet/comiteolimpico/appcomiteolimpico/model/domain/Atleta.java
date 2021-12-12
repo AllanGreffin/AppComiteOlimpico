@@ -8,6 +8,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -21,14 +23,9 @@ public abstract class Atleta {
     protected String Nome;
     protected boolean Sexo; //true = 1 = homem, false = 0 = mulher
     protected LocalDateTime Nascimento;
-
-    public Atleta(String Nome, String Sexo, String Nascimento) {
-        this.Nome = Nome;
-        boolean sexo = Boolean.parseBoolean(Sexo);
-        this.Sexo = sexo;
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        this.Nascimento = LocalDateTime.parse(Nascimento, formatter);
-    }
+    @ManyToOne
+    @JoinColumn(name = "idComissao")
+    protected Comissao comissao;
     
     public Atleta(String Nome, boolean Sexo, String Nascimento) {
         this.Nome = Nome;
@@ -49,7 +46,7 @@ public abstract class Atleta {
         this.Nome = Nome;
     }
 
-    public boolean isSexo() {
+    public boolean getSexo() {
         return Sexo;
     }
 
