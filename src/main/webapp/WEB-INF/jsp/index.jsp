@@ -23,7 +23,7 @@
 		<form action="/login" method="post">
 			<div class="form-group">
 			  <label>Email:</label>
-			  <input type="email" value="allan.greffin@al.edu.infnet.br" class="form-control" placeholder="Entre com o e-mail" name="email">
+			  <input type="email" value="allan.greffin@al.infnet.edu.br" class="form-control" placeholder="Entre com o e-mail" name="email">
 			</div>
 			
 			<div class="form-group">

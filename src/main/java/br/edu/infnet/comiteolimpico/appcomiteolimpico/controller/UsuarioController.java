@@ -10,6 +10,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
@@ -21,17 +23,22 @@ public class UsuarioController {
 	@Autowired
 	private EnderecoService enderecoService;
 
+        @RequestMapping(value = "/index", method = RequestMethod.GET)
+        public String index() {
+            return "/usuario/lista";
+        }
+        
 	@PostMapping(value = "/cep")
 	public String buscarCep(Model model, @RequestParam String cep) {
 		
 		model.addAttribute("endereco", enderecoService.obterEnderecoPorCep(cep));
 		
-		return "usuario/cadastro";
+		return "/usuario/cadastro";
 	}
 
 	@GetMapping(value = "/usuario")
 	public String telaCadastro() {
-		return "usuario/cadastro";
+		return "/usuario/cadastro";
 	}
 	
 	@GetMapping(value = "/usuarios")
@@ -39,7 +46,7 @@ public class UsuarioController {
 		
 		model.addAttribute("listaUsuarios", usuarioService.obterLista());
 		
-		return "usuario/lista";
+		return "/usuario/lista";
 	}
 
 	@PostMapping(value = "/usuario/incluir")
@@ -49,7 +56,7 @@ public class UsuarioController {
 		
 		usuarioService.incluir(usuario);
 
-		return "index";
+		return "/index";
 	}
 	
 	@GetMapping(value = "/usuario/{id}/excluir")

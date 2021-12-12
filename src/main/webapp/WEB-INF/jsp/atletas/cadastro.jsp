@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Sistema de Gestão de Pedidos</title>
+<title>App Comitê Olímpico</title>
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 </head>
 <body>
@@ -13,7 +13,7 @@
 
 	<div class="container">
 	
-		<form action="/cep" class="form-inline" method="post">
+<!--		<form action="/cep" class="form-inline" method="post">
 			<div class="form-group">
 		      <label>Cep:</label>
 		      <input value="12345678" type="text" class="form-control" placeholder="Entre com o cep" name="cep">
@@ -40,10 +40,8 @@
 		      <input type="password" value="elberth.moraes@prof.infnet.edu.br" class="form-control" placeholder="Entre com a senha" name="senha">
 		    </div>
 			
-			<c:import url="/WEB-INF/jsp/endereco.jsp"/>
-		    			
 			<button class="btn btn-primary" type="submit">Cadastrar</button>
-		</form>
+		</form>-->
 	</div>
 </body>
 </html>
