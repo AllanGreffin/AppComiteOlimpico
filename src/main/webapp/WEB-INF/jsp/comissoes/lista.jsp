@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Sistema de Gestão de Pedidos</title>
+<title>App Comitê Olímpico</title>
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 </head>
 <body>
@@ -14,34 +14,28 @@
 
 	<div class="container">	
 		
-		<c:if test="${not empty nome}">
-			<div class="alert alert-success">
-				 <strong>Confirmação!</strong> Usuário ${nome} cadastrado com sucesso!!!
-			</div>
-		</c:if>
+		<c:if test="${not empty lista}">
 		
-		<c:if test="${not empty listaUsuarios}">
-		
-			<h4>Listagem de usuários (${listaUsuarios.size()}):</h4>		
+			<h4>Listagem de usuários (${lista.size()}):</h4>		
 			<table class="table table-striped">
 			    <thead>
 			      <tr>
-			        <th>#</th>
+			        <th>Id</th>
 			        <th>Nome</th>
-			        <th>Email</th>
-			        <th>Solicitantes</th>
-			        <th>Produtos</th>
-			        <th>Pedidos</th>
+			        <th>Entidade</th>
+			        <th>Atletas</th>
 			        <c:if test="${user.admin}">
 			        	<th></th>
 			        </c:if>
 			      </tr>
 			    </thead>
 			    <tbody>
-			    	<c:forEach var="c" items="${listaComissoes}">
+			    	<c:forEach var="c" items="${lista}">
 				      <tr>
 				      	<td>${c.id}</td>
 				        <td>${c.nome}</td>
+<!--                                        <td>${c.entidade.nome}</td>
+                                        <td>${c.atletas.size()}</td>-->
 				        <c:if test="${user.admin}">
 				        	<td><a href="/usuario/${u.id}/excluir">
 							<c:choose>
@@ -59,8 +53,8 @@
 		  	</table>
 	  	</c:if>
 	  			
-	  	<c:if test="${empty listaUsuarios}">
-	  		<h4>Não existem usuários cadastrados!</h4>
+	  	<c:if test="${empty lista}">
+	  		<h4>Não existem comissões cadastrados!</h4>
 	  	</c:if>
 	</div>
 </body>

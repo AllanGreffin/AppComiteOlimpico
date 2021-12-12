@@ -18,7 +18,7 @@ public class EntidadeController {
     @RequestMapping(value = "entidades/index", method = RequestMethod.GET)
     public String index(Model model) {
         
-        model.addAttribute("listaComissoes", entidadeService.obterLista());
+        model.addAttribute("lista", entidadeService.obterLista());
         
         return "/entidades/lista";
     }

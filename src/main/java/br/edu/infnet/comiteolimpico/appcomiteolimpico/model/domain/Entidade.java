@@ -19,8 +19,6 @@ public class Entidade {
 
     public Entidade() {
     }
-
-    
     
     public Entidade(String nome, String continente, long populacao) {
         this.Nome = nome;

@@ -1,12 +1,12 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@page import="br.edu.infnet.comiteolimpico.appcomiteolimpico.model.domain.Atleta"%>
+<%@page import="br.edu.infnet.comiteolimpico.appcomiteolimpico.model.domain.Skate"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Sistema de Gestão de Pedidos</title>
+<title>App Comitê Olímpico</title>
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 </head>
 <body>
@@ -22,26 +22,34 @@
 		
 		<c:if test="${not empty listaAtletas}">
 		
-			<h4>Listagem de usuários (${listaAtletas.size()}):</h4>		
+			<h4>Listagem de usuários (${lista.size()}):</h4>		
 			<table class="table table-striped">
 			    <thead>
 			      <tr>
-			        <th>#</th>
+			        <th>Id</th>
 			        <th>Nome</th>
-			        <th>Email</th>
-			        <th>Solicitantes</th>
-			        <th>Produtos</th>
-			        <th>Pedidos</th>
+			        <th>Sexo</th>
+			        <th>Nascimento</th>
+			        <th>Comissao</th>
+			        <th>Rolamento</th>
+                                <th>X-Games</th>
+                                <th>Calçado</th>
 			        <c:if test="${user.admin}">
 			        	<th></th>
 			        </c:if>
 			      </tr>
 			    </thead>
 			    <tbody>
-			    	<c:forEach var="a" items="${listaAtletas}">
+			    	<c:forEach var="a" items="${lista}">
 				      <tr>
 				      	<td>${a.id}</td>
 				        <td>${a.nome}</td>
+<!--                                        <td>${a.sexo}</td>
+                                        <td>${a.nascimento}</td>
+                                        <td>${a.comissao.nome}</td>
+                                        <td>${a.rolamento}</td>
+                                        <td>${a.disputaXGames}</td>
+                                        <td>${a.calcado}</td>-->
 				        <c:if test="${user.admin}">
 				        	<td><a href="/usuario/${a.id}/excluir">
 							<c:choose>
@@ -59,8 +67,8 @@
 		  	</table>
 	  	</c:if>
 	  			
-	  	<c:if test="${empty listaUsuarios}">
-	  		<h4>Não existem usuários cadastrados!</h4>
+	  	<c:if test="${empty lista}">
+	  		<h4>Não existem skatistas cadastrados!</h4>
 	  	</c:if>
 	</div>
 </body>

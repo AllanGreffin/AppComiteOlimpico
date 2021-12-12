@@ -22,27 +22,28 @@
 		
 		<c:if test="${not empty listaUsuarios}">
 		
-			<h4>Listagem de usuários (${listaUsuarios.size()}):</h4>		
+			<h4>Listagem de usuários (${lista.size()}):</h4>		
 			<table class="table table-striped">
 			    <thead>
 			      <tr>
-			        <th>#</th>
+			        <th>Id</th>
 			        <th>Nome</th>
 			        <th>Email</th>
-			        <th>Solicitantes</th>
-			        <th>Produtos</th>
-			        <th>Pedidos</th>
+			        <th>Senha</th>
+			        <th>Admin</th>
 			        <c:if test="${user.admin}">
 			        	<th></th>
 			        </c:if>
 			      </tr>
 			    </thead>
 			    <tbody>
-			    	<c:forEach var="u" items="${listaUsuarios}">
+			    	<c:forEach var="u" items="${lista}">
 				      <tr>
 				      	<td>${u.id}</td>
 				        <td>${u.nome}</td>
 				        <td>${u.email}</td>
+                                        <td>${u.senha}</td>
+<!--                                        <td>${u.admin}</td>-->
 				        <c:if test="${user.admin}">
 				        	<td><a href="/usuario/${u.id}/excluir">
 							<c:choose>
@@ -60,7 +61,7 @@
 		  	</table>
 	  	</c:if>
 	  			
-	  	<c:if test="${empty listaUsuarios}">
+	  	<c:if test="${empty lista}">
 	  		<h4>Não existem usuários cadastrados!</h4>
 	  	</c:if>
 	</div>

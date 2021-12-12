@@ -18,7 +18,7 @@ public class ComissaoController {
     @RequestMapping(value = "comissoes/index", method = RequestMethod.GET)
     public String index(Model model) {
         
-        model.addAttribute("listaComissoes", comissaoService.obterLista());
+        model.addAttribute("lista", comissaoService.obterLista());
         
         return "/comissoes/lista";
     }

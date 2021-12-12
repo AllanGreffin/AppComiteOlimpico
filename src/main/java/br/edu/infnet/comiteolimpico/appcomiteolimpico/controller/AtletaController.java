@@ -52,7 +52,7 @@ public class AtletaController {
     @RequestMapping(value = "ginasticas/index", method = RequestMethod.GET)
     public String ginasticasIndex(Model model) {
         
-        model.addAttribute("listaAtletas", ginasticaService.obterLista());
+        model.addAttribute("lista", ginasticaService.obterLista());
         
         return "/ginasticas/lista";
     }
