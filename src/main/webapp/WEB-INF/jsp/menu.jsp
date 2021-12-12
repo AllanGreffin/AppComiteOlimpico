@@ -16,6 +16,7 @@
       	<li><a href="/skates/index">Skate</a></li>
       	<li><a href="/surfes/index">Surfe</a></li>
         <li><a href="/ginasticas/index">Ginastica</a></li>
+        <li><a href="/atletas/index">Atletas</a></li>
       </c:if>
     </ul>
     

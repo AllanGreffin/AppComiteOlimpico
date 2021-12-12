@@ -41,7 +41,7 @@
 				      	<td>${u.id}</td>
 				        <td>${u.nome}</td>
                                         <td>${u.continente}</td>
-<!--                                        <td>${u.populacao}</td>-->
+                                        <td>${u.populacao}</td>
 				        <c:if test="${user.admin}">
 				        	<td><a href="/usuario/${u.id}/excluir">
 							<c:choose>

@@ -1,9 +1,12 @@
 package br.edu.infnet.comiteolimpico.appcomiteolimpico.model.domain;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -16,7 +19,10 @@ public class Entidade {
     private String Nome;
     private String Continente;
     private long Populacao;
-
+    @OneToOne(cascade = CascadeType.DETACH) 
+    @JoinColumn(name = "idComissao")
+    private Comissao Comissao;
+    
     public Entidade() {
     }
     
@@ -58,6 +64,14 @@ public class Entidade {
         this.Populacao = Populacao;
     }
 
+    public Comissao getComissao() {
+        return Comissao;
+    }
+
+    public void setComissao(Comissao Comissao) {
+        this.Comissao = Comissao;
+    }
+    
     @Override
     public String toString(){
         StringBuilder sb = new StringBuilder();

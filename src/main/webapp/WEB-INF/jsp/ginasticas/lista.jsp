@@ -37,11 +37,11 @@
 				      <tr>
 				      	<td>${a.id}</td>
 				        <td>${a.nome}</td>
-<!--                                        <td>${a.nascimento}</td>
+                                        <td>${a.nascimento}</td>
                                         <td>${a.comissao.nome}</td>
                                         <td>${a.clube}</td>
                                         <td>${a.especialidade}</td>
-                                        <td>${a.tamanhoUniforme}</td>-->
+                                        <td>${a.tamanhoUniforme}</td>
 				        <c:if test="${user.admin}">
 				        	<td><a href="/usuario/${a.id}/excluir">
 							<c:choose>

@@ -34,8 +34,8 @@
 				      <tr>
 				      	<td>${c.id}</td>
 				        <td>${c.nome}</td>
-<!--                                        <td>${c.entidade.nome}</td>
-                                        <td>${c.atletas.size()}</td>-->
+                                        <td>${c.entidade.nome}</td>
+                                        <td>${c.atletas.size()}</td>
 				        <c:if test="${user.admin}">
 				        	<td><a href="/usuario/${u.id}/excluir">
 							<c:choose>

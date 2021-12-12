@@ -43,7 +43,7 @@
 				        <td>${u.nome}</td>
 				        <td>${u.email}</td>
                                         <td>${u.senha}</td>
-<!--                                        <td>${u.admin}</td>-->
+                                        <td>${u.admin}</td>
 				        <c:if test="${user.admin}">
 				        	<td><a href="/usuario/${u.id}/excluir">
 							<c:choose>

@@ -44,12 +44,12 @@
 				      <tr>
 				      	<td>${a.id}</td>
 				        <td>${a.nome}</td>
-<!--                                        <td>${a.sexo}</td>
+                                        <td>${a.sexo}</td>
                                         <td>${a.nascimento}</td>
                                         <td>${a.comissao.nome}</td>
                                         <td>${a.rolamento}</td>
                                         <td>${a.disputaXGames}</td>
-                                        <td>${a.calcado}</td>-->
+                                        <td>${a.calcado}</td>
 				        <c:if test="${user.admin}">
 				        	<td><a href="/usuario/${a.id}/excluir">
 							<c:choose>

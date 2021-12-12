@@ -49,15 +49,19 @@ public class AtletaLoader implements ApplicationRunner {
             entidadeService.incluir(entidade);
             
             Comissao comissao = new Comissao("COB", entidade);
+            comissao.setId(1);
             comissaoService.incluir(comissao);
             
             Ginastica ginastica = new Ginastica("Flamengo", "Solo", 10, "Larissa", false, "01/01/1991", comissao);
+            ginastica.setId(1);
             ginasticaService.incluir(ginastica);
 
             Skate skate = new Skate("marca X", true, 43, "Thiago", true, "02/02/1992", comissao);
+            skate.setId(2);
             skateService.incluir(skate);
 
             Surfe surfe = new Surfe(true, "Marca de prancha Y", 42, "Teobaldo", true, "03/03/1993", comissao);
+            surfe.setId(3);
             surfeService.incluir(surfe);
             
             Endereco endereco = new Endereco();
