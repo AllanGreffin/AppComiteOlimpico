@@ -28,7 +28,7 @@ public class AtletaController {
     @RequestMapping(value = "atletas/index", method = RequestMethod.GET)
     public String index(Model model) {
         
-        model.addAttribute("listaAtletas", atletaService.obterLista());
+        model.addAttribute("lista", atletaService.obterLista());
         
         return "/atletas/lista";
     }
@@ -36,7 +36,7 @@ public class AtletaController {
     @RequestMapping(value = "skates/index", method = RequestMethod.GET)
     public String skatesIndex(Model model) {
         
-        model.addAttribute("listaAtletas", skateService.obterLista());
+        model.addAttribute("lista", skateService.obterLista());
         
         return "/skates/lista";
     }
@@ -44,7 +44,7 @@ public class AtletaController {
     @RequestMapping(value = "surfes/index", method = RequestMethod.GET)
     public String surfesIndex(Model model) {
         
-        model.addAttribute("listaAtletas", surfeService.obterLista());
+        model.addAttribute("lista", surfeService.obterLista());
         
         return "/surfes/lista";
     }

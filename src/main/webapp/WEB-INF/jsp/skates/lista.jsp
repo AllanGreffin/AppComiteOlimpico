@@ -20,7 +20,7 @@
 			</div>
 		</c:if>
 		
-		<c:if test="${not empty listaAtletas}">
+		<c:if test="${not empty lista}">
 		
 			<h4>Listagem de usuários (${lista.size()}):</h4>		
 			<table class="table table-striped">
@@ -47,7 +47,7 @@
                                         <td>${a.sexo}</td>
                                         <td>${a.nascimento}</td>
                                         <td>${a.comissao.nome}</td>
-                                        <td>${a.rolamento}</td>
+                                        <td>${a.rolamentoPreferido}</td>
                                         <td>${a.disputaXGames}</td>
                                         <td>${a.calcado}</td>
 				        <c:if test="${user.admin}">
