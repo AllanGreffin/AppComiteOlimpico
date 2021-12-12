@@ -20,7 +20,7 @@
 			</div>
 		</c:if>
 		
-		<c:if test="${not empty listaUsuarios}">
+		<c:if test="${not empty lista}">
 		
 			<h4>Listagem de usuários (${lista.size()}):</h4>		
 			<table class="table table-striped">

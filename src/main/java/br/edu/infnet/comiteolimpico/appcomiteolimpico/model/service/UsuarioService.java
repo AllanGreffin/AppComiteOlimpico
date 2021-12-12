@@ -22,7 +22,8 @@ public class UsuarioService {
 	}
 	
 	public List<Usuario> obterLista(){
-		return (List<Usuario>) usuarioRepository.findAll();
+		List<Usuario> result = (List<Usuario>) usuarioRepository.findAll();
+                return result;
 	}
 
 	public void excluir(Integer id) {

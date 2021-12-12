@@ -24,7 +24,10 @@ public class UsuarioController {
 	private EnderecoService enderecoService;
 
         @RequestMapping(value = "/index", method = RequestMethod.GET)
-        public String index() {
+        public String index(Model model) {
+            
+            model.addAttribute("lista", usuarioService.obterLista());
+            
             return "/usuario/lista";
         }
         
