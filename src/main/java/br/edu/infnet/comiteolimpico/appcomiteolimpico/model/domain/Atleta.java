@@ -1,5 +1,6 @@
 package br.edu.infnet.comiteolimpico.appcomiteolimpico.model.domain;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import javax.persistence.Entity;
@@ -26,18 +27,38 @@ public abstract class Atleta {
     @ManyToOne
     @JoinColumn(name = "idComissao")
     protected Comissao comissao;
+
+    public Atleta() {
+    }
     
-    public Atleta(String Nome, boolean Sexo, String Nascimento) {
+    public Atleta(String Nome, boolean Sexo, String Nascimento, Comissao comissao) {
         this.Nome = Nome;
         this.Sexo = Sexo;
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        this.Nascimento = LocalDateTime.parse(Nascimento, formatter);
+        this.Nascimento = LocalDate.parse(Nascimento, formatter).atStartOfDay();
+        this.comissao = comissao;
     }
 
     public long getId() {
         return Id;
     }
 
+    public void setId(long Id) {
+        this.Id = Id;
+    }
+
+    public void setComissao(Comissao comissao) {
+        this.comissao = comissao;
+    }
+
+    public boolean isSexo() {
+        return Sexo;
+    }
+
+    public Comissao getComissao() {
+        return comissao;
+    }
+    
     public String getNome() {
         return Nome;
     }

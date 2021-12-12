@@ -17,14 +17,23 @@ public class Entidade {
     private String Continente;
     private long Populacao;
 
-    public Entidade(String Nome, String Continente, long Populacao) {
-        this.Nome = Nome;
-        this.Continente = Continente;
-        this.Populacao = Populacao;
+    public Entidade() {
+    }
+
+    
+    
+    public Entidade(String nome, String continente, long populacao) {
+        this.Nome = nome;
+        this.Continente = continente;
+        this.Populacao = populacao;
     }
 
     public long getId() {
         return Id;
+    }
+    
+    public void setId(long id) {
+        this.Id = id;
     }
 
     public String getNome() {

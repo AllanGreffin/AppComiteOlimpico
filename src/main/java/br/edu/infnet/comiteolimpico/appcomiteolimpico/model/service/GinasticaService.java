@@ -5,7 +5,9 @@ import br.edu.infnet.comiteolimpico.appcomiteolimpico.model.repositories.Ginasti
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
+import org.springframework.stereotype.Service;
 
+@Service
 public class GinasticaService {
     
     @Autowired
@@ -24,6 +26,6 @@ public class GinasticaService {
     }
 
     public List<Ginastica> obterLista(){
-            return (List<Ginastica>) ginasticaRepository.findAll(Sort.by(Sort.Direction.ASC, "nome"));
+            return (List<Ginastica>) ginasticaRepository.findAll();
     }
 }

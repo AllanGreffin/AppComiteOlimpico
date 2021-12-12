@@ -14,7 +14,55 @@
 
 	<div class="container">	
 		
-		lista de atletas
+		<c:if test="${not empty nome}">
+			<div class="alert alert-success">
+				 <strong>Confirmação!</strong> Usuário ${nome} cadastrado com sucesso!!!
+			</div>
+		</c:if>
+		
+		<c:if test="${not empty listaAtletas}">
+		
+			<h4>Listagem de usuários (${listaAtletas.size()}):</h4>		
+			<table class="table table-striped">
+			    <thead>
+			      <tr>
+			        <th>#</th>
+			        <th>Nome</th>
+			        <th>Email</th>
+			        <th>Solicitantes</th>
+			        <th>Produtos</th>
+			        <th>Pedidos</th>
+			        <c:if test="${user.admin}">
+			        	<th></th>
+			        </c:if>
+			      </tr>
+			    </thead>
+			    <tbody>
+			    	<c:forEach var="a" items="${listaAtletas}">
+				      <tr>
+				      	<td>${a.id}</td>
+				        <td>${a.nome}</td>
+				        <td>${a.email}</td>
+				        <c:if test="${user.admin}">
+				        	<td><a href="/usuario/${a.id}/excluir">
+							<c:choose>
+								<c:when test = "${user.id != u.id}">
+								Excluir
+								</c:when>
+							</c:choose>
+				        	</a>
+				        	</td>
+				        	
+				        </c:if>
+				      </tr>
+			      </c:forEach>
+			    </tbody>
+		  	</table>
+	  	</c:if>
+	  			
+	  	<c:if test="${empty listaUsuarios}">
+	  		<h4>Não existem usuários cadastrados!</h4>
+	  	</c:if>
 	</div>
 </body>
 </html>

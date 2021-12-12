@@ -1,5 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@page import="br.edu.infnet.comiteolimpico.appcomiteolimpico.model.domain.Comissao"%>
+<%@page import="br.edu.infnet.comiteolimpico.appcomiteolimpico.model.domain.Atleta"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -13,16 +13,10 @@
 	<c:import url="/WEB-INF/jsp/menu.jsp"/>
 
 	<div class="container">	
+				
+		<c:if test="${not empty listaAtletas}">
 		
-		<c:if test="${not empty nome}">
-			<div class="alert alert-success">
-				 <strong>Confirmação!</strong> Usuário ${nome} cadastrado com sucesso!!!
-			</div>
-		</c:if>
-		
-		<c:if test="${not empty listaUsuarios}">
-		
-			<h4>Listagem de usuários (${listaUsuarios.size()}):</h4>		
+			<h4>Listagem de usuários (${listaGinasticas.size()}):</h4>		
 			<table class="table table-striped">
 			    <thead>
 			      <tr>
@@ -38,12 +32,12 @@
 			      </tr>
 			    </thead>
 			    <tbody>
-			    	<c:forEach var="c" items="${listaComissoes}">
+			    	<c:forEach var="a" items="${listaGinasticas}">
 				      <tr>
-				      	<td>${c.id}</td>
-				        <td>${c.nome}</td>
+				      	<td>${a.id}</td>
+				        <td>${a.nome}</td>
 				        <c:if test="${user.admin}">
-				        	<td><a href="/usuario/${u.id}/excluir">
+				        	<td><a href="/usuario/${a.id}/excluir">
 							<c:choose>
 								<c:when test = "${user.id != u.id}">
 								Excluir
@@ -59,7 +53,7 @@
 		  	</table>
 	  	</c:if>
 	  			
-	  	<c:if test="${empty listaUsuarios}">
+	  	<c:if test="${empty listaGinasticas}">
 	  		<h4>Não existem usuários cadastrados!</h4>
 	  	</c:if>
 	</div>

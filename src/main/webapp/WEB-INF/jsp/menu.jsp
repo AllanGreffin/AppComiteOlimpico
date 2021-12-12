@@ -10,12 +10,12 @@
       <li class="active"><a href="/">Home</a></li>
       
       <c:if test="${not empty user}">
-      	<li><a href="/atletas/index">Atletas</a></li>
       	<li><a href="/comissoes/index">Comissões</a></li>
       	<li><a href="/entidades/index">Entidades</a></li>
       	<li><a href="/index">Usuários</a></li>
-      	<li><a href="#">Skate</a></li>
-      	<li><a href="#">Surfe</a></li>
+      	<li><a href="/skates/index">Skate</a></li>
+      	<li><a href="/surfes/index">Surfe</a></li>
+        <li><a href="/ginasticas/index">Ginastica</a></li>
       </c:if>
     </ul>
     

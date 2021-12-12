@@ -9,5 +9,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ComissaoRepository extends CrudRepository<Comissao, Integer> {
 
-	public List<Comissao> findAll(Sort by);
+	public List<Comissao> findAll();
 }

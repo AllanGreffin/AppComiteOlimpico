@@ -27,6 +27,11 @@ public class Comissao {
     @JoinColumn(name = "idAtleta")
     private List<Atleta> Atletas;
 
+    public Comissao() {
+    }
+
+    
+    
     public Comissao(String Nome, String nomeEntidade, String continenteEntidade, String populacaoEntidade) {
         this.Nome = Nome;
         Entidade entidade = new Entidade(nomeEntidade, continenteEntidade, Long.parseLong(populacaoEntidade));
@@ -37,7 +42,6 @@ public class Comissao {
     public Comissao(String Nome, Entidade Entidade) {
         this.Nome = Nome;
         this.Entidade = Entidade;
-        this.Atletas = new ArrayList<>();
     }
     
     public String getNome() {
@@ -66,6 +70,10 @@ public class Comissao {
 
     public long getId() {
         return Id;
+    }
+
+    public void setId(long Id) {
+        this.Id = Id;
     }
     
     @Override

@@ -7,7 +7,9 @@ import br.edu.infnet.comiteolimpico.appcomiteolimpico.model.repositories.AtletaR
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
+import org.springframework.stereotype.Service;
 
+@Service
 public class AtletaService {
     
         @Autowired
@@ -21,7 +23,9 @@ public class AtletaService {
 		return atletaRepository.findById(id).orElse(null);
 	}
 	
-	public List<Atleta> obterLista(Usuario usuario){
-		return (List<Atleta>) atletaRepository.findAll(Sort.by(Sort.Direction.ASC, "nome"));
+	public List<Atleta> obterLista(){
+            
+            List<Atleta> result = (List<Atleta>) atletaRepository.findAll();
+            return result;
 	}
 }

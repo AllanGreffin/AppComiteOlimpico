@@ -11,9 +11,14 @@ public class Surfe extends Atleta {
     private boolean OndasGigantes;
     private String MarcaPrancha;
     private int TamanhoBermuda;
+
+    public Surfe() {
+    }
     
-    public Surfe(boolean OndasGigantes, String MarcaPrancha, int TamanhoBermuda, String Nome, boolean Sexo, String Nascimento) {
-        super(Nome, Sexo, Nascimento);
+    
+    
+    public Surfe(boolean ondasGigantes, String marcaPrancha, int tamanhoBermuda, String nome, boolean sexo, String nascimento, Comissao comissao) {
+        super(nome, sexo, nascimento, comissao);
         this.OndasGigantes = OndasGigantes;
         this.MarcaPrancha = MarcaPrancha;
         this.TamanhoBermuda = TamanhoBermuda;

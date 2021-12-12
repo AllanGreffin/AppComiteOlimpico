@@ -1,5 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@page import="br.edu.infnet.comiteolimpico.appcomiteolimpico.model.domain.Comissao"%>
+<%@page import="br.edu.infnet.comiteolimpico.appcomiteolimpico.model.domain.Atleta"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -20,9 +20,9 @@
 			</div>
 		</c:if>
 		
-		<c:if test="${not empty listaUsuarios}">
+		<c:if test="${not empty listaAtletas}">
 		
-			<h4>Listagem de usuários (${listaUsuarios.size()}):</h4>		
+			<h4>Listagem de usuários (${listaAtletas.size()}):</h4>		
 			<table class="table table-striped">
 			    <thead>
 			      <tr>
@@ -38,12 +38,12 @@
 			      </tr>
 			    </thead>
 			    <tbody>
-			    	<c:forEach var="c" items="${listaComissoes}">
+			    	<c:forEach var="a" items="${listaAtletas}">
 				      <tr>
-				      	<td>${c.id}</td>
-				        <td>${c.nome}</td>
+				      	<td>${a.id}</td>
+				        <td>${a.nome}</td>
 				        <c:if test="${user.admin}">
-				        	<td><a href="/usuario/${u.id}/excluir">
+				        	<td><a href="/usuario/${a.id}/excluir">
 							<c:choose>
 								<c:when test = "${user.id != u.id}">
 								Excluir
