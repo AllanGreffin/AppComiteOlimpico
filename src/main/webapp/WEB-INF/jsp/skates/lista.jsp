@@ -14,6 +14,10 @@
 
 	<div class="container">	
 		
+                <a href="/bebida">Novo skatista</a>
+
+                <hr>
+            
 		<c:if test="${not empty nome}">
 			<div class="alert alert-success">
 				 <strong>Confirmação!</strong> Usuário ${nome} cadastrado com sucesso!!!

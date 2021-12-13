@@ -8,40 +8,44 @@
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 </head>
 <body>
-
 	<c:import url="/WEB-INF/jsp/menu.jsp"/>
 
-	<div class="container">
-	
-		<form action="/cep" class="form-inline" method="post">
-			<div class="form-group">
-		      <label>Cep:</label>
-		      <input value="12345678" type="text" class="form-control" placeholder="Entre com o cep" name="cep">
-		    </div>			
-			
-			<button class="btn btn-primary" type="submit">Buscar</button>			
-		</form>
-		
-		<hr>
-		
-		<form action="/usuario/incluir" method="post">	
+	<div class="container">	
+		<form action="/bebida/incluir" method="post">	
 			<div class="form-group">
 		      <label>Nome:</label>
-		      <input value="Elberth Moraes" type="text" class="form-control" placeholder="Entre com o seu nome" name="nome">
+		      <input value="Refrigerante" type="text" class="form-control" placeholder="Entre com o nome da bebida" name="nome">
 		    </div>			
 		
 			<div class="form-group">
-		      <label>E-mail:</label>
-		      <input value="elberth@moraes.com" type="email" class="form-control" placeholder="Entre com o seu e-mail" name="email">
+		      <label>Código:</label>
+		      <input value="123" type="text" class="form-control" placeholder="Entre com o código da bebida" name="codigo">
 		    </div>			
-			
-		    <div class="form-group">
-		      <label>Senha:</label>
-		      <input type="password" value="elberth.moraes@prof.infnet.edu.br" class="form-control" placeholder="Entre com a senha" name="senha">
-		    </div>
-			
-			<c:import url="/WEB-INF/jsp/endereco.jsp"/>
-		    			
+
+			<div class="form-group">
+		      <label>Valor:</label>
+		      <input value="1000" type="text" class="form-control" placeholder="Entre com o valor da bebida" name="valor">
+		    </div>			
+
+			<div class="form-group">
+		      <label>Tamanho:</label>
+		      <input value="500" type="text" class="form-control" placeholder="Entre com o tamanho da bebida" name="tamanho">
+		    </div>			
+
+			<div class="form-group">
+		      <label>Marca:</label>
+		      <input value="Coke" type="text" class="form-control" placeholder="Entre com a marca da bebida" name="marca">
+		    </div>			
+
+			<div class="form-group">
+		      <label>Característica:</label>
+				<div class="form-check-inline">
+				  <label class="form-check-label">
+				    <input type="checkbox" name="gelada" class="form-check-input" value="true"> Gelada
+				  </label>
+				</div>			
+			</div>
+
 			<button class="btn btn-primary" type="submit">Cadastrar</button>
 		</form>
 	</div>

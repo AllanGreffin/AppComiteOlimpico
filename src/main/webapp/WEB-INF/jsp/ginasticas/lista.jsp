@@ -13,7 +13,11 @@
 	<c:import url="/WEB-INF/jsp/menu.jsp"/>
 
 	<div class="container">	
-				
+		    
+                <a href="/bebida">Novo Ginasta</a>
+
+                <hr>
+            
 		<c:if test="${not empty lista}">
 		
 			<h4>Listagem de ginastas (${lista.size()}):</h4>		
