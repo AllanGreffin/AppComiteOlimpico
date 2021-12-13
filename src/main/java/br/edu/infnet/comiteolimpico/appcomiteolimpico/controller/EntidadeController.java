@@ -1,13 +1,13 @@
 package br.edu.infnet.comiteolimpico.appcomiteolimpico.controller;
 
-import br.edu.infnet.comiteolimpico.appcomiteolimpico.model.service.ComissaoService;
+import br.edu.infnet.comiteolimpico.appcomiteolimpico.model.domain.Entidade;
 import br.edu.infnet.comiteolimpico.appcomiteolimpico.model.service.EntidadeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class EntidadeController {
@@ -26,5 +26,15 @@ public class EntidadeController {
     @RequestMapping(value = "entidades/success", method = RequestMethod.POST)
     public String add() {
         return "/entidades/success";
+    }
+    
+    @PostMapping(value = "/entidades/incluir")
+    public String incluirEntidade(Model model, Entidade entidade) {
+
+        entidadeService.incluir(entidade);
+
+        model.addAttribute("id", entidade.getId());
+
+        return index(model);
     }
 }

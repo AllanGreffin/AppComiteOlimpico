@@ -1,5 +1,8 @@
 package br.edu.infnet.comiteolimpico.appcomiteolimpico.controller;
 
+import br.edu.infnet.comiteolimpico.appcomiteolimpico.model.domain.Ginastica;
+import br.edu.infnet.comiteolimpico.appcomiteolimpico.model.domain.Skate;
+import br.edu.infnet.comiteolimpico.appcomiteolimpico.model.domain.Surfe;
 import br.edu.infnet.comiteolimpico.appcomiteolimpico.model.service.AtletaService;
 import br.edu.infnet.comiteolimpico.appcomiteolimpico.model.service.GinasticaService;
 import br.edu.infnet.comiteolimpico.appcomiteolimpico.model.service.SkateService;
@@ -9,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class AtletaController {
@@ -41,6 +45,16 @@ public class AtletaController {
         return "/skates/lista";
     }
     
+    @PostMapping(value = "/skates/incluir")
+    public String incluirSkate(Model model, Skate skate) {
+
+            skateService.incluir(skate);
+
+            model.addAttribute("id", skate.getId());
+
+            return skatesIndex(model);
+    }
+    
     @RequestMapping(value = "surfes/index", method = RequestMethod.GET)
     public String surfesIndex(Model model) {
         
@@ -49,11 +63,31 @@ public class AtletaController {
         return "/surfes/lista";
     }
     
+    @PostMapping(value = "/surfes/incluir")
+    public String incluirSurfe(Model model, Surfe surfe) {
+
+            surfeService.incluir(surfe);
+
+            model.addAttribute("id", surfe.getId());
+
+            return surfesIndex(model);
+    }
+    
     @RequestMapping(value = "ginasticas/index", method = RequestMethod.GET)
     public String ginasticasIndex(Model model) {
         
         model.addAttribute("lista", ginasticaService.obterLista());
         
         return "/ginasticas/lista";
+    }
+    
+    @PostMapping(value = "/ginasticas/incluir")
+    public String incluirGinastica(Model model, Ginastica ginastica) {
+
+            ginasticaService.incluir(ginastica);
+
+            model.addAttribute("id", ginastica.getId());
+
+            return ginasticasIndex(model);
     }
 }
