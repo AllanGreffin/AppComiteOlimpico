@@ -8,46 +8,59 @@
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 </head>
 <body>
-	<c:import url="/WEB-INF/jsp/menu.jsp"/>
+    <c:import url="/WEB-INF/jsp/menu.jsp"/>
 
-	<div class="container">	
-		<form action="/bebida/incluir" method="post">	
-			<div class="form-group">
-		      <label>Nome:</label>
-		      <input value="Refrigerante" type="text" class="form-control" placeholder="Entre com o nome da bebida" name="nome">
-		    </div>			
-		
-			<div class="form-group">
-		      <label>Código:</label>
-		      <input value="123" type="text" class="form-control" placeholder="Entre com o código da bebida" name="codigo">
-		    </div>			
+    <!--
+    protected String Nome;
+    protected boolean Sexo; //true = 1 = homem, false = 0 = mulher
+    protected LocalDateTime Nascimento;
+    protected Comissao comissao;
+    private boolean OndasGigantes;
+    private String MarcaPrancha;
+    private int TamanhoBermuda;-->
+        
+    <div class="container">	
+        <form action="/bebida/incluir" method="post">	
+            <div class="form-group">
+              <label>Nome:</label>
+              <input value="" type="text" class="form-control" placeholder="Entre com o nome do ginasta" name="nome">
+            </div>			
 
-			<div class="form-group">
-		      <label>Valor:</label>
-		      <input value="1000" type="text" class="form-control" placeholder="Entre com o valor da bebida" name="valor">
-		    </div>			
+            <div class="form-group">
+                <label>Sexo</label>
+                <div class="form-check-inline">
+                  <label class="form-check-label">
+                    <input type="checkbox" name="sexo" class="form-check-input" value="false"> Do sexo masculino?
+                  </label>
+                </div>			
+            </div>
 
-			<div class="form-group">
-		      <label>Tamanho:</label>
-		      <input value="500" type="text" class="form-control" placeholder="Entre com o tamanho da bebida" name="tamanho">
-		    </div>			
+            <div class="form-group">
+              <label>Nascimento (Digite no formato dd/MM/yyyy)</label>
+              <input value="" type="text" class="form-control" placeholder="" name="nascimento">
+            </div>
 
-			<div class="form-group">
-		      <label>Marca:</label>
-		      <input value="Coke" type="text" class="form-control" placeholder="Entre com a marca da bebida" name="marca">
-		    </div>			
+            <div class="form-group">
+                <label>Compete em ondas gigantes?</label>
+                <div class="form-check-inline">
+                  <label class="form-check-label">
+                    <input type="checkbox" name="ondasGigantes" class="form-check-input" value="false">Sim, compete
+                  </label>
+                </div>			
+            </div>
 
-			<div class="form-group">
-		      <label>Característica:</label>
-				<div class="form-check-inline">
-				  <label class="form-check-label">
-				    <input type="checkbox" name="gelada" class="form-check-input" value="true"> Gelada
-				  </label>
-				</div>			
-			</div>
+            <div class="form-group">
+              <label>Marca da prancha</label>
+              <input value="" type="text" class="form-control" placeholder="" name="prancha">
+            </div>
+            
+            <div class="form-group">
+              <label>Tamanho da bermuda</label>
+              <input value="" type="number" class="form-control" placeholder="" name="bermuda">
+            </div>
 
-			<button class="btn btn-primary" type="submit">Cadastrar</button>
-		</form>
-	</div>
+            <button class="btn btn-primary" type="submit">Cadastrar</button>
+        </form>
+    </div>
 </body>
 </html>
