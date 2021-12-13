@@ -20,7 +20,7 @@
     private int Calcado;-->
         
     <div class="container">	
-        <form action="/bebida/incluir" method="post">	
+        <form action="/skates/incluir" method="post">	
             <div class="form-group">
               <label>Nome:</label>
               <input value="" type="text" class="form-control" placeholder="Entre com o nome do ginasta" name="nome">
@@ -37,19 +37,19 @@
 
             <div class="form-group">
               <label>Nascimento (Digite no formato dd/MM/yyyy)</label>
-              <input value="" type="text" class="form-control" placeholder="" name="nascimento">
+              <input value="" type="text" class="form-control" placeholder="" name="dataDeNascimento">
             </div>
 
             <div class="form-group">
               <label>Rolamento Preferido</label>
-              <input value="" type="text" class="form-control" placeholder="" name="rolamento">
+              <input value="" type="text" class="form-control" placeholder="" name="rolamentoPreferido">
             </div>
 
             <div class="form-group">
                 <label>Disputa X-Games?</label>
                 <div class="form-check-inline">
                   <label class="form-check-label">
-                    <input type="checkbox" name="xgames" class="form-check-input" value="false"> Sim
+                    <input type="checkbox" name="disputaXGames" class="form-check-input" value="false"> Sim
                   </label>
                 </div>			
             </div>
@@ -59,6 +59,13 @@
               <input value="" type="number" class="form-control" placeholder="" name="calcado">
             </div>
 
+            <select path="comissao" name="comissaoId">
+                <c:forEach items="${comissoes}" var="c">
+                   <option value="${c.id}">${c.nome} 
+                   </option>
+                </c:forEach>
+            </select>
+            
             <button class="btn btn-primary" type="submit">Cadastrar</button>
         </form>
     </div>

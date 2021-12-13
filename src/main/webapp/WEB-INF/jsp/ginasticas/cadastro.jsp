@@ -20,7 +20,7 @@
     private int TamanhoUniforme; -->
         
     <div class="container">	
-        <form action="/bebida/incluir" method="post">	
+        <form action="/ginasticas/incluir" method="post">	
             <div class="form-group">
               <label>Nome:</label>
               <input value="" type="text" class="form-control" placeholder="Entre com o nome do ginasta" name="nome">
@@ -37,7 +37,7 @@
 
             <div class="form-group">
               <label>Nascimento (Digite no formato dd/MM/yyyy)</label>
-              <input value="" type="text" class="form-control" placeholder="" name="nascimento">
+              <input value="" type="text" class="form-control" placeholder="" name="dataDeNascimento">
             </div>
 
             <div class="form-group">
@@ -52,8 +52,15 @@
 
             <div class="form-group">
               <label>Tamanho do Uniforme</label>
-              <input value="" type="number" class="form-control" placeholder="" name="uniforme">
+              <input value="" type="number" class="form-control" placeholder="" name="tamanhoUniforme">
             </div>
+            
+            <select path="comissao" name="comissaoId">
+                <c:forEach items="${comissoes}" var="c">
+                   <option value="${c.id}">${c.nome} 
+                   </option>
+                </c:forEach>
+            </select>
 
             <button class="btn btn-primary" type="submit">Cadastrar</button>
         </form>
