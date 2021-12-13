@@ -14,7 +14,7 @@
 
     <div class="container">	
 
-        <a href="/bebida">Nova comissão</a>
+        <a href="/comissoes/cadastro">Nova comissão</a>
 
         <hr>
 

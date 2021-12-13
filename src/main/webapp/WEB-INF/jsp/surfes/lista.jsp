@@ -14,7 +14,7 @@
 
 	<div class="container">	
 		
-                <a href="/bebida">Novo surfista</a>
+                <a href="/surfes/cadastro">Novo surfista</a>
 
                 <hr>
             

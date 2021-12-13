@@ -14,7 +14,7 @@
 
 	<div class="container">	
 		
-                <a href="/bebida">Novo skatista</a>
+                <a href="/skates/cadastro">Novo skatista</a>
 
                 <hr>
             

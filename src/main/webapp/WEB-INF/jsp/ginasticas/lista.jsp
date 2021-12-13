@@ -14,7 +14,7 @@
 
 	<div class="container">	
 		    
-                <a href="/bebida">Novo Ginasta</a>
+                <a href="/ginasticas/cadastro">Novo Ginasta</a>
 
                 <hr>
             

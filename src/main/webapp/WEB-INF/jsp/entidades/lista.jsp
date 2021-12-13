@@ -14,7 +14,7 @@
 
 	<div class="container">	
 		
-                <a href="/bebida">Nova Entidade</a>
+                <a href="/entidades/cadastro">Nova Entidade</a>
 
                 <hr>
             

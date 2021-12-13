@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
@@ -55,6 +56,11 @@ public class AtletaController {
             return skatesIndex(model);
     }
     
+    @GetMapping(value = "/skates/cadastro")
+    public String telaCadastroSkate() {
+            return "skates/cadastro";
+    }
+    
     @RequestMapping(value = "surfes/index", method = RequestMethod.GET)
     public String surfesIndex(Model model) {
         
@@ -73,6 +79,11 @@ public class AtletaController {
             return surfesIndex(model);
     }
     
+    @GetMapping(value = "/surfes/cadastro")
+    public String telaCadastroSurfe() {
+            return "surfes/cadastro";
+    }
+    
     @RequestMapping(value = "ginasticas/index", method = RequestMethod.GET)
     public String ginasticasIndex(Model model) {
         
@@ -89,5 +100,10 @@ public class AtletaController {
             model.addAttribute("id", ginastica.getId());
 
             return ginasticasIndex(model);
+    }
+    
+    @GetMapping(value = "/ginasticas/cadastro")
+    public String telaCadastroGinastica() {
+            return "ginasticas/cadastro";
     }
 }
