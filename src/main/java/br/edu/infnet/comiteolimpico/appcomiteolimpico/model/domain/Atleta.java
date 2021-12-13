@@ -20,7 +20,7 @@ public abstract class Atleta {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    protected long Id;
+    protected Integer Id;
     protected String Nome;
     protected boolean Sexo; //true = 1 = homem, false = 0 = mulher
     protected LocalDateTime Nascimento;
@@ -39,11 +39,11 @@ public abstract class Atleta {
         this.comissao = comissao;
     }
 
-    public long getId() {
+    public Integer getId() {
         return Id;
     }
 
-    public void setId(long Id) {
+    public void setId(Integer Id) {
         this.Id = Id;
     }
 

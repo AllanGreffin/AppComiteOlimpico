@@ -8,17 +8,28 @@
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 </head>
 <body>
-	<c:import url="/WEB-INF/jsp/menu.jsp"/>
+    <c:import url="/WEB-INF/jsp/menu.jsp"/>
 
-	<div class="container">	
-            <form action="/bebida/incluir" method="post">	
-                <div class="form-group">
-                    <label>Nome:</label>
-                    <input value="" type="text" class="form-control" placeholder="Entre com o nome da Comissão" name="nome">
-                </div>			
+    <div class="container">	
+        <form action="/comissoes/incluir" method="post">	
+            <div class="form-group">
+                <label>Nome:</label>
+                <input value="" type="text" class="form-control" placeholder="Entre com o nome da Comissão" name="nome">
+            </div>			
 
-                <button class="btn btn-primary" type="submit">Cadastrar</button>
-            </form>
-	</div>
+            <div>
+                ${entidades.size()}
+            </div>
+            
+            <select path="entidade" name="entidadeId">
+                <c:forEach items="${entidades}" var="e">
+                   <option value="${e.id}">${e.nome} 
+                   </option>
+                </c:forEach>
+            </select>
+            
+            <button class="btn btn-primary" type="submit">Cadastrar</button>
+        </form>
+    </div>
 </body>
 </html>

@@ -15,7 +15,7 @@ public class Entidade {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long Id;
+    private Integer Id;
     private String Nome;
     private String Continente;
     private long Populacao;
@@ -32,11 +32,11 @@ public class Entidade {
         this.Populacao = populacao;
     }
 
-    public long getId() {
+    public Integer getId() {
         return Id;
     }
     
-    public void setId(long id) {
+    public void setId(Integer id) {
         this.Id = id;
     }
 

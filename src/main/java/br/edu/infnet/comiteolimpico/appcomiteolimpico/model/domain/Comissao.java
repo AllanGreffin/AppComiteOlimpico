@@ -18,7 +18,7 @@ public class Comissao {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long Id;
+    private Integer Id;
     private String Nome;
     @OneToOne(cascade = CascadeType.DETACH) 
     @JoinColumn(name = "idEntidade")
@@ -68,11 +68,11 @@ public class Comissao {
         this.Atletas = Atletas;
     }
 
-    public long getId() {
+    public Integer getId() {
         return Id;
     }
 
-    public void setId(long Id) {
+    public void setId(Integer Id) {
         this.Id = Id;
     }
     
