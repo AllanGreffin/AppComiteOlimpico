@@ -9,14 +9,9 @@
 </head>
 <body>
 	<c:import url="/WEB-INF/jsp/menu.jsp"/>
-
-<!--private String Nome;
-    private String Continente;
-    private long Populacao;
-    private Comissao Comissao;-->
         
 	<div class="container">	
-            <form action="/bebida/incluir" method="post">	
+            <form action="/entidades/incluir" method="post">	
                 <div class="form-group">
                     <label>Nome:</label>
                     <input value="" type="text" class="form-control" placeholder="Entre com o nome da entidade" name="nome">
@@ -32,7 +27,14 @@
                     <input value="" type="number" class="form-control" placeholder="Entre com o quantitativo populacional" name="populacao">
                 </div>		
 
-                    <button class="btn btn-primary" type="submit">Cadastrar</button>
+                <select path="comissao" name="comissaoId">
+                    <c:forEach items="${comissoes}" var="c">
+                       <option value="${c.id}">${c.nome} 
+                       </option>
+                    </c:forEach>
+                </select>
+                
+                <button class="btn btn-primary" type="submit">Cadastrar</button>
             </form>
 	</div>
 </body>

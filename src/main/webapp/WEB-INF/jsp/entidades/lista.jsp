@@ -34,22 +34,24 @@
 			        <th>Nome</th>
 			        <th>Continente</th>
 			        <th>População</th>
+                                <th>Comissão</th>
 			        <c:if test="${user.admin}">
 			        	<th></th>
 			        </c:if>
 			      </tr>
 			    </thead>
 			    <tbody>
-			    	<c:forEach var="u" items="${lista}">
+			    	<c:forEach var="e" items="${lista}">
 				      <tr>
-				      	<td>${u.id}</td>
-				        <td>${u.nome}</td>
-                                        <td>${u.continente}</td>
-                                        <td>${u.populacao}</td>
+				      	<td>${e.id}</td>
+				        <td>${e.nome}</td>
+                                        <td>${e.continente}</td>
+                                        <td>${e.populacao}</td>
+                                        <td>${e.comissao.nome}</td>
 				        <c:if test="${user.admin}">
-				        	<td><a href="/usuario/${u.id}/excluir">
+				        	<td><a href="/usuario/${e.id}/excluir">
 							<c:choose>
-								<c:when test = "${user.id != u.id}">
+								<c:when test = "${user.id != e.id}">
 								Excluir
 								</c:when>
 							</c:choose>
