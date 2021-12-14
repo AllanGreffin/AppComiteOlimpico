@@ -47,11 +47,11 @@ public class AcessoController {
 		if(usuario != null) {
 			model.addAttribute("user", usuario);
 			
-			return "index";
+			return "login";
 		} else {
 			model.addAttribute("msg", email + ", autenticação inválida.. tente novamente!!!");
 
-			return "login";
+			return "index";
 		}
 	}
 }

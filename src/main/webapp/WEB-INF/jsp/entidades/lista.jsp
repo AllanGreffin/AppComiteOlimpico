@@ -26,7 +26,7 @@
 		
 		<c:if test="${not empty lista}">
 		
-			<h4>Listagem de usuários (${lista.size()}):</h4>		
+			<h4>Listagem de Entidades (${lista.size()}):</h4>		
 			<table class="table table-striped">
 			    <thead>
 			      <tr>

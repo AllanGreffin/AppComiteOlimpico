@@ -52,6 +52,9 @@ public class AtletaLoader implements ApplicationRunner {
             comissao.setId(1);
             comissaoService.incluir(comissao);
             
+            entidade.setComissao(comissao);
+            entidadeService.incluir(entidade);
+            
             Ginastica ginastica = new Ginastica("Flamengo", "Solo", 10, "Larissa", false, "01/01/1991", comissao);
             ginasticaService.incluir(ginastica);
 
@@ -60,22 +63,5 @@ public class AtletaLoader implements ApplicationRunner {
 
             Surfe surfe = new Surfe(true, "Marca de prancha Y", 42, "Teobaldo", true, "03/03/1993", comissao);
             surfeService.incluir(surfe);
-            
-            Endereco endereco = new Endereco();
-            endereco.setBairro("bairro");
-            endereco.setCep("123123123");
-            endereco.setComplemento("complemento");
-            endereco.setLocalidade("localidade");
-            endereco.setLogradouro("logradouro");
-            endereco.setUf("RJ");
-            Usuario usuario = new Usuario();
-            usuario.setEmail("allan.greffin@al.infnet.edu.br");
-            usuario.setNome("Allan Greffin");
-            usuario.setSenha("123456");
-            usuario.setAdmin(true);
-
-            usuario.setEndereco(endereco);
-
-            usuarioService.incluir(usuario);
 	}
 }

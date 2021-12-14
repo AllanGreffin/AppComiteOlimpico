@@ -23,8 +23,7 @@ public class Comissao {
     @OneToOne(cascade = CascadeType.DETACH) 
     @JoinColumn(name = "idEntidade")
     private Entidade Entidade;
-    @OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true)
-    @JoinColumn(name = "idAtleta")
+    @OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true, mappedBy = "comissao")
     private List<Atleta> Atletas;
 
     public Comissao() {

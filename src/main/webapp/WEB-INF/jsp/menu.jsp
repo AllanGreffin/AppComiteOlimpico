@@ -26,7 +26,7 @@
       </c:if>
       
       <c:if test="${empty user}">
-      	<li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      	<li><a href="/"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
 	  </c:if>
 	  
       <c:if test="${not empty user}">
