@@ -9,5 +9,5 @@ import org.springframework.data.repository.CrudRepository;
 public interface AtletaRepository extends CrudRepository<Atleta, Integer> {
 
     @Query("from Atleta a")
-    public List<Atleta> findAll();
+    public List<Atleta> findAllByOrderByNomeAsc();
 }

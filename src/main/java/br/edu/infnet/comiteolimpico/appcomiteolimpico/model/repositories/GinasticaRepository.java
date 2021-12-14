@@ -11,5 +11,5 @@ import org.springframework.stereotype.Repository;
 public interface GinasticaRepository extends CrudRepository<Ginastica, Integer> {
 
     @Query("from Ginastica g")
-    public List<Ginastica> findAll(Sort by);
+    public List<Ginastica> findAllByOrderByNomeAsc();
 }
