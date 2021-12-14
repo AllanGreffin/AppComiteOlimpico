@@ -50,16 +50,16 @@ public class AtletaController {
     }
     
     @GetMapping(value = "/atletas/{id}/excluir")
-    public String excluir(@PathVariable Integer id) {
+    public String excluir(Model model, @PathVariable Integer id) {
 
         try{
             atletaService.excluir(id);
         }catch(Exception e){
-        
+            model.addAttribute("mensagem", "Impossível realizar a exclusão deste solicitante!!!");
         }
         
-
-        return "redirect:/atletas/lista";
+        return this.index(model);
+        
     }
     
     @RequestMapping(value = "skates/index", method = RequestMethod.GET)
@@ -93,16 +93,15 @@ public class AtletaController {
     }
     
     @GetMapping(value = "/skates/{id}/excluir")
-    public String excluirSkate(@PathVariable Integer id) {
+    public String excluirSkate(Model model, @PathVariable Integer id) {
 
         try{
             skateService.excluir(id);
         }catch(Exception e){
-        
+            model.addAttribute("mensagem", "Impossível realizar a exclusão deste solicitante!!!");
         }
         
-
-        return "redirect:/skates/lista";
+        return this.skatesIndex(model);
     }
     
     @RequestMapping(value = "surfes/index", method = RequestMethod.GET)
@@ -136,15 +135,16 @@ public class AtletaController {
     }
     
     @GetMapping(value = "/surfes/{id}/excluir")
-    public String excluirSurfes(@PathVariable Integer id) {
+    public String excluirSurfes(Model model, @PathVariable Integer id) {
 
         try{
             surfeService.excluir(id);
         }catch(Exception e){
-        
+            model.addAttribute("mensagem", "Impossível realizar a exclusão deste solicitante!!!");
         }
 
-        return "redirect:/surfes/lista";
+        return this.surfesIndex(model);
+        
     }
     
     @RequestMapping(value = "ginasticas/index", method = RequestMethod.GET)
@@ -178,14 +178,15 @@ public class AtletaController {
     }
     
     @GetMapping(value = "/ginasticas/{id}/excluir")
-    public String excluirGinasticas(@PathVariable Integer id) {
+    public String excluirGinasticas(Model model, @PathVariable Integer id) {
 
         try{
             ginasticaService.excluir(id);
         }catch(Exception e){
-        
+            model.addAttribute("mensagem", "Impossível realizar a exclusão deste solicitante!!!");
         }
 
-        return "redirect:/ginasticas/lista";
+        return this.ginasticasIndex(model);
+        
     }
 }

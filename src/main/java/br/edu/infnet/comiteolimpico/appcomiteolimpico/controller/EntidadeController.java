@@ -59,14 +59,15 @@ public class EntidadeController {
     }
     
     @GetMapping(value = "/entidades/{id}/excluir")
-    public String excluir(@PathVariable Integer id) {
+    public String excluir(Model model, @PathVariable Integer id) {
 
         try{
             entidadeService.excluir(id);
         }catch(Exception e){
-        
+            model.addAttribute("mensagem", "Impossível realizar a exclusão deste solicitante!!!");
         }
 
-        return "redirect:/entidades/lista";
+        return this.index(model);
+        
     }
 }
