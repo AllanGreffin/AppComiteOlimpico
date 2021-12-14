@@ -10,6 +10,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface SurfeRepository extends CrudRepository<Surfe, Integer> {
 
-    @Query("from Surfe s")
+    @Query("from Surfe s where s.usuario.id =:id")
     public List<Surfe> findAllByOrderByNomeAsc();
 }

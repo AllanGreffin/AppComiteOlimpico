@@ -44,24 +44,31 @@ public class AtletaLoader implements ApplicationRunner {
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 
+            Usuario usuario = usuarioService.obterLista().get(0);
+            
             Entidade entidade = new Entidade("Brasil", "América so Sul", 220000000);
             entidade.setId(1);
+            entidade.setUsuario(usuario);
             entidadeService.incluir(entidade);
             
             Comissao comissao = new Comissao("COB", entidade);
             comissao.setId(1);
+            comissao.setUsuario(usuario);
             comissaoService.incluir(comissao);
             
             entidade.setComissao(comissao);
             entidadeService.incluir(entidade);
             
             Ginastica ginastica = new Ginastica("Flamengo", "Solo", 10, "Larissa", false, "01/01/1991", comissao);
+            ginastica.setUsuario(usuario);
             ginasticaService.incluir(ginastica);
 
             Skate skate = new Skate("marca X", true, 43, "Thiago", true, "02/02/1992", comissao);
+            skate.setUsuario(usuario);
             skateService.incluir(skate);
 
             Surfe surfe = new Surfe(true, "Marca de prancha Y", 42, "Teobaldo", true, "03/03/1993", comissao);
+            surfe.setUsuario(usuario);
             surfeService.incluir(surfe);
 	}
 }

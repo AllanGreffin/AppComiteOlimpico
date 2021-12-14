@@ -27,6 +27,9 @@ public abstract class Atleta {
     @ManyToOne
     @JoinColumn(name = "idComissao")
     protected Comissao comissao;
+    @ManyToOne
+    @JoinColumn(name = "idUsuario")
+    private Usuario usuario;
 
     public Atleta() {
     }
@@ -82,6 +85,16 @@ public abstract class Atleta {
     public void setNascimento(LocalDateTime Nascimento) {
         this.Nascimento = Nascimento;
     }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+    
+    
     
     public abstract String ResumoAtleta();
 }

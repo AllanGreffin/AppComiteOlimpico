@@ -10,6 +10,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ComissaoRepository extends CrudRepository<Comissao, Integer> {
 
-    @Query("from Comissao c")
+    @Query("from Comissao c where c.usuario.id =:id")
     public List<Comissao> findAllByOrderByNomeAsc();
 }

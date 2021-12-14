@@ -10,6 +10,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface SkateRepository extends CrudRepository<Skate, Integer> {
 
-    @Query("from Skate s")
+    @Query("from Skate s where s.usuario.id =:id")
     public List<Skate> findAllByOrderByNomeAsc();
 }

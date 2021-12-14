@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -22,6 +23,9 @@ public class Entidade {
     @OneToOne(cascade = CascadeType.DETACH) 
     @JoinColumn(name = "idComissao")
     private Comissao Comissao;
+    @ManyToOne
+    @JoinColumn(name = "idUsuario")
+    private Usuario usuario;
     
     public Entidade() {
     }
@@ -71,6 +75,16 @@ public class Entidade {
     public void setComissao(Comissao Comissao) {
         this.Comissao = Comissao;
     }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+    
+    
     
     @Override
     public String toString(){

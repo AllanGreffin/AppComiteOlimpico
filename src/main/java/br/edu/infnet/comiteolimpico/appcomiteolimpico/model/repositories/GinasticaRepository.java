@@ -10,6 +10,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface GinasticaRepository extends CrudRepository<Ginastica, Integer> {
 
-    @Query("from Ginastica g")
+    @Query("from Ginastica g where g.usuario.id =:id")
     public List<Ginastica> findAllByOrderByNomeAsc();
 }

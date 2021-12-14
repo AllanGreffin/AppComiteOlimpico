@@ -10,6 +10,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface EntidadeRepository extends CrudRepository<Entidade, Integer> {
 
-    @Query("from Entidade e")
+    @Query("from Entidade e where e.usuario.id =:id")
     public List<Entidade> findAllByOrderByNomeAsc();
 }

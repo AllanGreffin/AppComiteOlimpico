@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -25,7 +26,10 @@ public class Comissao {
     private Entidade Entidade;
     @OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true, mappedBy = "comissao")
     private List<Atleta> Atletas;
-
+    @ManyToOne
+    @JoinColumn(name = "idUsuario")
+    private Usuario usuario;
+    
     public Comissao() {
     }
 
@@ -74,6 +78,16 @@ public class Comissao {
     public void setId(Integer Id) {
         this.Id = Id;
     }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+    
+    
     
     @Override
     public String toString(){
