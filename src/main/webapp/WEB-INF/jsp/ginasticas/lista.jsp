@@ -47,12 +47,12 @@
                                         <td>${a.especialidade}</td>
                                         <td>${a.tamanhoUniforme}</td>
 				        <c:if test="${user.admin}">
-				        	<td><a href="/usuario/${a.id}/excluir">
-							<c:choose>
-								<c:when test = "${user.id != u.id}">
+				        	<td><a href="/ginasticas/${a.id}/excluir">
+							<%--<c:choose>--%>
+								<%--<c:when test = "${user.id != u.id}">--%>
 								Excluir
-								</c:when>
-							</c:choose>
+								<%--</c:when>--%>
+							<%--</c:choose>--%>
 				        	</a>
 				        	</td>
 				        	

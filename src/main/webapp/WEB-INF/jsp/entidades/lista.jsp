@@ -49,15 +49,14 @@
                                         <td>${e.populacao}</td>
                                         <td>${e.comissao.nome}</td>
 				        <c:if test="${user.admin}">
-				        	<td><a href="/usuario/${e.id}/excluir">
-							<c:choose>
-								<c:when test = "${user.id != e.id}">
-								Excluir
-								</c:when>
-							</c:choose>
-				        	</a>
-				        	</td>
-				        	
+                                            <td><a href="/entidades/${e.id}/excluir">
+                                                <%--<c:choose>--%>
+                                                        <%--<c:when test = "${user.id != e.id}">--%>
+                                                        Excluir
+                                                        <%--</c:when>--%>
+                                                <%--</c:choose>--%>
+                                            </a>
+                                            </td>
 				        </c:if>
 				      </tr>
 			      </c:forEach>

@@ -46,11 +46,11 @@
                                         <td>${u.admin}</td>
 				        <c:if test="${user.admin}">
 				        	<td><a href="/usuario/${u.id}/excluir">
-							<c:choose>
-								<c:when test = "${user.id != u.id}">
+							<%--<c:choose>--%>
+								<%--<c:when test = "${user.id != u.id}">--%>
 								Excluir
-								</c:when>
-							</c:choose>
+								<%--</c:when>--%>
+							<%--</c:choose>--%>
 				        	</a>
 				        	</td>
 				        	

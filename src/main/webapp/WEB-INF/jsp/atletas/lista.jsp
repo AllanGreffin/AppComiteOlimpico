@@ -45,15 +45,14 @@
                                         <td>${a.nascimento}</td>
                                         <td>${a.comissao.nome}</td>
 				        <c:if test="${user.admin}">
-				        	<td><a href="/usuario/${a.id}/excluir">
-							<c:choose>
-								<c:when test = "${user.id != u.id}">
-								Excluir
-								</c:when>
-							</c:choose>
-				        	</a>
-				        	</td>
-				        	
+                                            <td><a href="/atletas/${a.id}/excluir">
+                                                <%--<c:choose>--%>
+                                                    <%--<c:when test = "${user.id != u.id}">--%>
+                                                    Excluir
+                                                    <%--</c:when>--%>
+                                                <%--</c:choose>--%>
+                                            </a>
+                                            </td>
 				        </c:if>
 				      </tr>
 			      </c:forEach>

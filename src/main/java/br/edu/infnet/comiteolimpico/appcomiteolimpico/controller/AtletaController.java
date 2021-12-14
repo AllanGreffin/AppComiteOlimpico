@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -46,6 +47,19 @@ public class AtletaController {
         model.addAttribute("lista", atletaService.obterLista());
         
         return "/atletas/lista";
+    }
+    
+    @GetMapping(value = "/atletas/{id}/excluir")
+    public String excluir(@PathVariable Integer id) {
+
+        try{
+            atletaService.excluir(id);
+        }catch(Exception e){
+        
+        }
+        
+
+        return "redirect:/atletas/lista";
     }
     
     @RequestMapping(value = "skates/index", method = RequestMethod.GET)
@@ -78,6 +92,19 @@ public class AtletaController {
         return "skates/cadastro";
     }
     
+    @GetMapping(value = "/skates/{id}/excluir")
+    public String excluirSkate(@PathVariable Integer id) {
+
+        try{
+            skateService.excluir(id);
+        }catch(Exception e){
+        
+        }
+        
+
+        return "redirect:/skates/lista";
+    }
+    
     @RequestMapping(value = "surfes/index", method = RequestMethod.GET)
     public String surfesIndex(Model model) {
         
@@ -108,6 +135,18 @@ public class AtletaController {
         return "surfes/cadastro";
     }
     
+    @GetMapping(value = "/surfes/{id}/excluir")
+    public String excluirSurfes(@PathVariable Integer id) {
+
+        try{
+            surfeService.excluir(id);
+        }catch(Exception e){
+        
+        }
+
+        return "redirect:/surfes/lista";
+    }
+    
     @RequestMapping(value = "ginasticas/index", method = RequestMethod.GET)
     public String ginasticasIndex(Model model) {
         
@@ -136,5 +175,17 @@ public class AtletaController {
         List<Comissao> comissoes = comissaoService.obterLista();
         model.addAttribute("comissoes", comissoes);
         return "ginasticas/cadastro";
+    }
+    
+    @GetMapping(value = "/ginasticas/{id}/excluir")
+    public String excluirGinasticas(@PathVariable Integer id) {
+
+        try{
+            ginasticaService.excluir(id);
+        }catch(Exception e){
+        
+        }
+
+        return "redirect:/ginasticas/lista";
     }
 }

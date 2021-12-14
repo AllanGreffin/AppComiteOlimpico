@@ -65,8 +65,12 @@ public class UsuarioController {
 	@GetMapping(value = "/usuario/{id}/excluir")
 	public String excluir(@PathVariable Integer id) {
 		
-		usuarioService.excluir(id);
+            try{
+            usuarioService.excluir(id);
+            }catch(Exception e){
 
-		return "redirect:/alunos";
+            }
+
+            return "redirect:/usuario/lista";
 	}	
 }

@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -55,5 +56,17 @@ public class EntidadeController {
         model.addAttribute("comissoes", comissoes);
         
         return "entidades/cadastro";
+    }
+    
+    @GetMapping(value = "/entidades/{id}/excluir")
+    public String excluir(@PathVariable Integer id) {
+
+        try{
+            entidadeService.excluir(id);
+        }catch(Exception e){
+        
+        }
+
+        return "redirect:/entidades/lista";
     }
 }
