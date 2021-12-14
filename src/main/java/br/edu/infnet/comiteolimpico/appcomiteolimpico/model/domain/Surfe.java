@@ -19,9 +19,9 @@ public class Surfe extends Atleta {
     
     public Surfe(boolean ondasGigantes, String marcaPrancha, int tamanhoBermuda, String nome, boolean sexo, String nascimento, Comissao comissao) {
         super(nome, sexo, nascimento, comissao);
-        this.OndasGigantes = OndasGigantes;
-        this.MarcaPrancha = MarcaPrancha;
-        this.TamanhoBermuda = TamanhoBermuda;
+        this.OndasGigantes = ondasGigantes;
+        this.MarcaPrancha = marcaPrancha;
+        this.TamanhoBermuda = tamanhoBermuda;
     }
 
     public boolean isOndasGigantes() {

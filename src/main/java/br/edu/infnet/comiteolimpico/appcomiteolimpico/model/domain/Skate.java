@@ -19,9 +19,9 @@ public class Skate extends Atleta {
     
     public Skate(String rolamentoPreferido, boolean disputaXGames, int calcado, String nome, boolean sexo, String nascimento, Comissao comissao) {
         super(nome, sexo, nascimento, comissao);
-        this.RolamentoPreferido = RolamentoPreferido;
-        this.DisputaXGames = DisputaXGames;
-        this.Calcado = Calcado;
+        this.RolamentoPreferido = rolamentoPreferido;
+        this.DisputaXGames = disputaXGames;
+        this.Calcado = calcado;
     }
 
     public String getRolamentoPreferido() {

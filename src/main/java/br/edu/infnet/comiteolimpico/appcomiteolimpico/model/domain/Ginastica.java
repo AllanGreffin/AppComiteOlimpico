@@ -20,9 +20,9 @@ public class Ginastica extends Atleta {
     
     public Ginastica(String clube, String especialidade, int tamanhoUniforme, String nome, boolean sexo, String nascimento, Comissao comissao) {
         super(nome, sexo, nascimento, comissao);
-        this.Clube = Clube;
-        this.Especialidade = Especialidade;
-        this.TamanhoUniforme = TamanhoUniforme;
+        this.Clube = clube;
+        this.Especialidade = especialidade;
+        this.TamanhoUniforme = tamanhoUniforme;
     }
 
     public String getClube() {
