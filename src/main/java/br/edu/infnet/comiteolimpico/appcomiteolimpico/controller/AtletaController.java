@@ -4,6 +4,7 @@ import br.edu.infnet.comiteolimpico.appcomiteolimpico.model.domain.Comissao;
 import br.edu.infnet.comiteolimpico.appcomiteolimpico.model.domain.Ginastica;
 import br.edu.infnet.comiteolimpico.appcomiteolimpico.model.domain.Skate;
 import br.edu.infnet.comiteolimpico.appcomiteolimpico.model.domain.Surfe;
+import br.edu.infnet.comiteolimpico.appcomiteolimpico.model.domain.Usuario;
 import br.edu.infnet.comiteolimpico.appcomiteolimpico.model.service.AtletaService;
 import br.edu.infnet.comiteolimpico.appcomiteolimpico.model.service.ComissaoService;
 import br.edu.infnet.comiteolimpico.appcomiteolimpico.model.service.GinasticaService;
@@ -22,6 +23,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttribute;
 
 @Controller
 public class AtletaController {
@@ -42,9 +44,9 @@ public class AtletaController {
     private ComissaoService comissaoService;
     
     @RequestMapping(value = "atletas/index", method = RequestMethod.GET)
-    public String index(Model model) {
+    public String index(Model model, @SessionAttribute("user") Usuario usuario) {
         
-        model.addAttribute("lista", atletaService.obterLista());
+        model.addAttribute("lista", atletaService.obterLista(usuario));
         
         return "/atletas/lista";
     }
@@ -58,14 +60,14 @@ public class AtletaController {
             model.addAttribute("mensagem", "Impossível realizar a exclusão deste solicitante!!!");
         }
         
-        return this.index(model);
+        return this.index(model, null);
         
     }
     
     @RequestMapping(value = "skates/index", method = RequestMethod.GET)
-    public String skatesIndex(Model model) {
+    public String skatesIndex(Model model, @SessionAttribute("user") Usuario usuario) {
         
-        model.addAttribute("lista", skateService.obterLista());
+        model.addAttribute("lista", skateService.obterLista(usuario));
         
         return "/skates/lista";
     }
@@ -82,12 +84,12 @@ public class AtletaController {
 
         model.addAttribute("id", skate.getId());
 
-        return skatesIndex(model);
+        return skatesIndex(model, null);
     }
     
     @GetMapping(value = "/skates/cadastro")
-    public String telaCadastroSkate(Model model) {
-        List<Comissao> comissoes = comissaoService.obterLista();
+    public String telaCadastroSkate(Model model, @SessionAttribute("user") Usuario usuario) {
+        List<Comissao> comissoes = comissaoService.obterLista(usuario);
         model.addAttribute("comissoes", comissoes);
         return "skates/cadastro";
     }
@@ -101,13 +103,13 @@ public class AtletaController {
             model.addAttribute("mensagem", "Impossível realizar a exclusão deste solicitante!!!");
         }
         
-        return this.skatesIndex(model);
+        return this.skatesIndex(model, null);
     }
     
     @RequestMapping(value = "surfes/index", method = RequestMethod.GET)
-    public String surfesIndex(Model model) {
+    public String surfesIndex(Model model, @SessionAttribute("user") Usuario usuario) {
         
-        model.addAttribute("lista", surfeService.obterLista());
+        model.addAttribute("lista", surfeService.obterLista(usuario));
         
         return "/surfes/lista";
     }
@@ -124,12 +126,12 @@ public class AtletaController {
 
         model.addAttribute("id", surfe.getId());
 
-        return surfesIndex(model);
+        return surfesIndex(model, null);
     }
     
     @GetMapping(value = "/surfes/cadastro")
-    public String telaCadastroSurfe(Model model) {
-        List<Comissao> comissoes = comissaoService.obterLista();
+    public String telaCadastroSurfe(Model model, @SessionAttribute("user") Usuario usuario) {
+        List<Comissao> comissoes = comissaoService.obterLista(usuario);
         model.addAttribute("comissoes", comissoes);
         return "surfes/cadastro";
     }
@@ -143,14 +145,14 @@ public class AtletaController {
             model.addAttribute("mensagem", "Impossível realizar a exclusão deste solicitante!!!");
         }
 
-        return this.surfesIndex(model);
+        return this.surfesIndex(model, null);
         
     }
     
     @RequestMapping(value = "ginasticas/index", method = RequestMethod.GET)
-    public String ginasticasIndex(Model model) {
+    public String ginasticasIndex(Model model, @SessionAttribute("user") Usuario usuario) {
         
-        model.addAttribute("lista", ginasticaService.obterLista());
+        model.addAttribute("lista", ginasticaService.obterLista(usuario));
         
         return "/ginasticas/lista";
     }
@@ -167,12 +169,12 @@ public class AtletaController {
 
         model.addAttribute("id", ginastica.getId());
 
-        return ginasticasIndex(model);
+        return ginasticasIndex(model, null);
     }
     
     @GetMapping(value = "/ginasticas/cadastro")
-    public String telaCadastroGinastica(Model model) {
-        List<Comissao> comissoes = comissaoService.obterLista();
+    public String telaCadastroGinastica(Model model, @SessionAttribute("user") Usuario usuario) {
+        List<Comissao> comissoes = comissaoService.obterLista(usuario);
         model.addAttribute("comissoes", comissoes);
         return "ginasticas/cadastro";
     }
@@ -186,7 +188,7 @@ public class AtletaController {
             model.addAttribute("mensagem", "Impossível realizar a exclusão deste solicitante!!!");
         }
 
-        return this.ginasticasIndex(model);
+        return this.ginasticasIndex(model, null);
         
     }
 }

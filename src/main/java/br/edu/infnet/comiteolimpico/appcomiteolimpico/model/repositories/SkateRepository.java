@@ -11,5 +11,5 @@ import org.springframework.stereotype.Repository;
 public interface SkateRepository extends CrudRepository<Skate, Integer> {
 
     @Query("from Skate s where s.usuario.id =:id")
-    public List<Skate> findAllByOrderByNomeAsc();
+    public List<Skate> findAll(Integer id);
 }

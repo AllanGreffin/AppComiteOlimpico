@@ -26,9 +26,9 @@ public class AtletaService {
             return atletaRepository.findById(id).orElse(null);
 	}
 	
-	public List<Atleta> obterLista(){
+	public List<Atleta> obterLista(Usuario usuario){
             
-            List<Atleta> result = (List<Atleta>) atletaRepository.findAll();
+            List<Atleta> result = (List<Atleta>) atletaRepository.findAll(usuario.getId());
             Collections.sort(result, new Comparator<Atleta>() {
                 public int compare(final Atleta object1, final Atleta object2) {
                     return object1.getNome().compareToIgnoreCase(object2.getNome());

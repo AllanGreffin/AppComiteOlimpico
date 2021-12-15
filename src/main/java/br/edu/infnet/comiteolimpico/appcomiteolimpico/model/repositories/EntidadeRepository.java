@@ -11,5 +11,5 @@ import org.springframework.stereotype.Repository;
 public interface EntidadeRepository extends CrudRepository<Entidade, Integer> {
 
     @Query("from Entidade e where e.usuario.id =:id")
-    public List<Entidade> findAllByOrderByNomeAsc();
+    public List<Entidade> findAll(Integer id);
 }

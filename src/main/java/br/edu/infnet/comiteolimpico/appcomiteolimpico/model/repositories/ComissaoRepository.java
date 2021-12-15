@@ -11,5 +11,5 @@ import org.springframework.stereotype.Repository;
 public interface ComissaoRepository extends CrudRepository<Comissao, Integer> {
 
     @Query("from Comissao c where c.usuario.id =:id")
-    public List<Comissao> findAllByOrderByNomeAsc();
+    public List<Comissao> findAll(Integer id);
 }

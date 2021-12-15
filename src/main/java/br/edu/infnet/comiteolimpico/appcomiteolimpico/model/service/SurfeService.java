@@ -1,6 +1,7 @@
 package br.edu.infnet.comiteolimpico.appcomiteolimpico.model.service;
 
 import br.edu.infnet.comiteolimpico.appcomiteolimpico.model.domain.Surfe;
+import br.edu.infnet.comiteolimpico.appcomiteolimpico.model.domain.Usuario;
 import br.edu.infnet.comiteolimpico.appcomiteolimpico.model.repositories.SurfeRepository;
 import java.util.Collections;
 import java.util.Comparator;
@@ -27,9 +28,9 @@ public class SurfeService {
         return surfeRepository.findById(id).orElse(null);
     }
 
-    public List<Surfe> obterLista(){
+    public List<Surfe> obterLista(Usuario usuario){
         
-        List<Surfe> result = (List<Surfe>) surfeRepository.findAll();
+        List<Surfe> result = (List<Surfe>) surfeRepository.findAll(usuario.getId());
         Collections.sort(result, new Comparator<Surfe>() {
             public int compare(final Surfe object1, final Surfe object2) {
                 return object1.getNome().compareToIgnoreCase(object2.getNome());

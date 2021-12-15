@@ -2,6 +2,7 @@ package br.edu.infnet.comiteolimpico.appcomiteolimpico.controller;
 
 import br.edu.infnet.comiteolimpico.appcomiteolimpico.model.domain.Comissao;
 import br.edu.infnet.comiteolimpico.appcomiteolimpico.model.domain.Entidade;
+import br.edu.infnet.comiteolimpico.appcomiteolimpico.model.domain.Usuario;
 import br.edu.infnet.comiteolimpico.appcomiteolimpico.model.service.ComissaoService;
 import br.edu.infnet.comiteolimpico.appcomiteolimpico.model.service.EntidadeService;
 import java.util.List;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttribute;
 
 @Controller
 public class EntidadeController {
@@ -25,9 +27,9 @@ public class EntidadeController {
     private ComissaoService comissaoService;
     
     @RequestMapping(value = "entidades/index", method = RequestMethod.GET)
-    public String index(Model model) {
+    public String index(Model model, @SessionAttribute("user") Usuario usuario) {
         
-        model.addAttribute("lista", entidadeService.obterLista());
+        model.addAttribute("lista", entidadeService.obterLista(usuario));
         
         return "/entidades/lista";
     }
@@ -46,13 +48,13 @@ public class EntidadeController {
 
         model.addAttribute("id", entidade.getId());
 
-        return index(model);
+        return index(model, null);
     }
     
     @GetMapping(value = "/entidades/cadastro")
-    public String telaCadastro(Model model) {
+    public String telaCadastro(Model model, @SessionAttribute("user") Usuario usuario) {
         
-        List<Comissao> comissoes = comissaoService.obterLista();
+        List<Comissao> comissoes = comissaoService.obterLista(usuario);
         model.addAttribute("comissoes", comissoes);
         
         return "entidades/cadastro";
@@ -67,7 +69,7 @@ public class EntidadeController {
             model.addAttribute("mensagem", "Impossível realizar a exclusão deste solicitante!!!");
         }
 
-        return this.index(model);
+        return this.index(model, null);
         
     }
 }
