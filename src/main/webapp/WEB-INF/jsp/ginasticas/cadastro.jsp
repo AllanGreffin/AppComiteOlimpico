@@ -30,7 +30,7 @@
                 <label>Sexo</label>
                 <div class="form-check-inline">
                   <label class="form-check-label">
-                    <input type="checkbox" name="sexo" class="form-check-input" value="false"> Do sexo masculino?
+                    <input type="checkbox" name="sexo" class="form-check-input"> Do sexo masculino?
                   </label>
                 </div>			
             </div>

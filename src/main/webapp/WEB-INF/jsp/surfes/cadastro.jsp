@@ -30,7 +30,7 @@
                 <label>Sexo</label>
                 <div class="form-check-inline">
                   <label class="form-check-label">
-                    <input type="checkbox" name="sexo" class="form-check-input" value="false"> Do sexo masculino?
+                    <input type="checkbox" name="sexo" class="form-check-input"> Do sexo masculino?
                   </label>
                 </div>			
             </div>
@@ -44,7 +44,7 @@
                 <label>Compete em ondas gigantes?</label>
                 <div class="form-check-inline">
                   <label class="form-check-label">
-                    <input type="checkbox" name="ondasGigantes" class="form-check-input" value="false">Sim, compete
+                    <input type="checkbox" name="ondasGigantes" class="form-check-input">Sim, compete
                   </label>
                 </div>			
             </div>
