@@ -26,13 +26,6 @@
                     <label>População</label>
                     <input value="" type="number" class="form-control" placeholder="Entre com o quantitativo populacional" name="populacao">
                 </div>		
-
-                <select path="comissao" name="comissaoId">
-                    <c:forEach items="${comissoes}" var="c">
-                       <option value="${c.id}">${c.nome} 
-                       </option>
-                    </c:forEach>
-                </select>
                 
                 <button class="btn btn-primary" type="submit">Cadastrar</button>
             </form>

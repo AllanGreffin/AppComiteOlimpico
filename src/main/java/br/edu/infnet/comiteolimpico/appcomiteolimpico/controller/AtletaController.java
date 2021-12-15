@@ -52,7 +52,7 @@ public class AtletaController {
     }
     
     @GetMapping(value = "/atletas/{id}/excluir")
-    public String excluir(Model model, @PathVariable Integer id) {
+    public String excluir(Model model, @PathVariable Integer id, @SessionAttribute("user") Usuario usuario) {
 
         try{
             atletaService.excluir(id);
@@ -60,7 +60,7 @@ public class AtletaController {
             model.addAttribute("mensagem", "Impossível realizar a exclusão deste solicitante!!!");
         }
         
-        return this.index(model, null);
+        return this.index(model, usuario);
         
     }
     
@@ -73,18 +73,20 @@ public class AtletaController {
     }
     
     @PostMapping(value = "/skates/incluir")
-    public String incluirSkate(@RequestParam("comissaoId") Integer comissaoId, @RequestParam("dataDeNascimento") String dataDeNascimento, Model model, Skate skate) {
+    public String incluirSkate(@RequestParam("comissaoId") Integer comissaoId, @RequestParam("dataDeNascimento") String dataDeNascimento,
+            Model model, Skate skate, @SessionAttribute("user") Usuario usuario) {
         
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         skate.setNascimento(LocalDate.parse(dataDeNascimento, formatter).atStartOfDay());
         
         Comissao comissao = comissaoService.obterPorId(comissaoId);
         skate.setComissao(comissao);
+        skate.setUsuario(usuario);
         skateService.incluir(skate);
 
         model.addAttribute("id", skate.getId());
 
-        return skatesIndex(model, null);
+        return skatesIndex(model, usuario);
     }
     
     @GetMapping(value = "/skates/cadastro")
@@ -95,7 +97,7 @@ public class AtletaController {
     }
     
     @GetMapping(value = "/skates/{id}/excluir")
-    public String excluirSkate(Model model, @PathVariable Integer id) {
+    public String excluirSkate(Model model, @PathVariable Integer id, @SessionAttribute("user") Usuario usuario) {
 
         try{
             skateService.excluir(id);
@@ -103,7 +105,7 @@ public class AtletaController {
             model.addAttribute("mensagem", "Impossível realizar a exclusão deste solicitante!!!");
         }
         
-        return this.skatesIndex(model, null);
+        return this.skatesIndex(model, usuario);
     }
     
     @RequestMapping(value = "surfes/index", method = RequestMethod.GET)
@@ -115,18 +117,20 @@ public class AtletaController {
     }
     
     @PostMapping(value = "/surfes/incluir")
-    public String incluirSurfe(@RequestParam("comissaoId") Integer comissaoId, @RequestParam("dataDeNascimento") String dataDeNascimento, Model model, Surfe surfe) {
+    public String incluirSurfe(@RequestParam("comissaoId") Integer comissaoId, @RequestParam("dataDeNascimento") String dataDeNascimento,
+            Model model, Surfe surfe, @SessionAttribute("user") Usuario usuario) {
         
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         surfe.setNascimento(LocalDate.parse(dataDeNascimento, formatter).atStartOfDay());
         
         Comissao comissao = comissaoService.obterPorId(comissaoId);
         surfe.setComissao(comissao);
+        surfe.setUsuario(usuario);
         surfeService.incluir(surfe);
 
         model.addAttribute("id", surfe.getId());
 
-        return surfesIndex(model, null);
+        return surfesIndex(model, usuario);
     }
     
     @GetMapping(value = "/surfes/cadastro")
@@ -137,7 +141,7 @@ public class AtletaController {
     }
     
     @GetMapping(value = "/surfes/{id}/excluir")
-    public String excluirSurfes(Model model, @PathVariable Integer id) {
+    public String excluirSurfes(Model model, @PathVariable Integer id, @SessionAttribute("user") Usuario usuario) {
 
         try{
             surfeService.excluir(id);
@@ -145,7 +149,7 @@ public class AtletaController {
             model.addAttribute("mensagem", "Impossível realizar a exclusão deste solicitante!!!");
         }
 
-        return this.surfesIndex(model, null);
+        return this.surfesIndex(model, usuario);
         
     }
     
@@ -158,18 +162,20 @@ public class AtletaController {
     }
     
     @PostMapping(value = "/ginasticas/incluir")
-    public String incluirGinastica(@RequestParam("comissaoId") Integer comissaoId, @RequestParam("dataDeNascimento") String dataDeNascimento, Model model, Ginastica ginastica) {
+    public String incluirGinastica(@RequestParam("comissaoId") Integer comissaoId, @RequestParam("dataDeNascimento") String dataDeNascimento,
+            Model model, Ginastica ginastica, @SessionAttribute("user") Usuario usuario) {
 
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         ginastica.setNascimento(LocalDate.parse(dataDeNascimento, formatter).atStartOfDay());
         
         Comissao comissao = comissaoService.obterPorId(comissaoId);
         ginastica.setComissao(comissao);
+        ginastica.setUsuario(usuario);
         ginasticaService.incluir(ginastica);
 
         model.addAttribute("id", ginastica.getId());
 
-        return ginasticasIndex(model, null);
+        return ginasticasIndex(model, usuario);
     }
     
     @GetMapping(value = "/ginasticas/cadastro")
@@ -180,7 +186,7 @@ public class AtletaController {
     }
     
     @GetMapping(value = "/ginasticas/{id}/excluir")
-    public String excluirGinasticas(Model model, @PathVariable Integer id) {
+    public String excluirGinasticas(Model model, @PathVariable Integer id, @SessionAttribute("user") Usuario usuario) {
 
         try{
             ginasticaService.excluir(id);
@@ -188,7 +194,7 @@ public class AtletaController {
             model.addAttribute("mensagem", "Impossível realizar a exclusão deste solicitante!!!");
         }
 
-        return this.ginasticasIndex(model, null);
+        return this.ginasticasIndex(model, usuario);
         
     }
 }

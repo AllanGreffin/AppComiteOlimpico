@@ -34,7 +34,6 @@
 			        <th>Nome</th>
 			        <th>Continente</th>
 			        <th>População</th>
-                                <th>Comissão</th>
 			        <c:if test="${user.admin}">
 			        	<th></th>
 			        </c:if>
@@ -47,7 +46,6 @@
 				        <td>${e.nome}</td>
                                         <td>${e.continente}</td>
                                         <td>${e.populacao}</td>
-                                        <td>${e.comissao.nome}</td>
 				        <c:if test="${user.admin}">
                                             <td><a href="/entidades/${e.id}/excluir">
                                                 <%--<c:choose>--%>

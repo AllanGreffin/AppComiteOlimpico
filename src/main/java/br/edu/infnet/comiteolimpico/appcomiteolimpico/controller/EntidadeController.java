@@ -40,15 +40,16 @@ public class EntidadeController {
     }
     
     @PostMapping(value = "/entidades/incluir")
-    public String incluirEntidade(@RequestParam("comissaoId") Integer comissaoId, Model model, Entidade entidade) {
+    public String incluirEntidade(Model model, Entidade entidade, @SessionAttribute("user") Usuario usuario) {
 
-        Comissao comissao = comissaoService.obterPorId(comissaoId);
-        entidade.setComissao(comissao);
+//        Comissao comissao = comissaoService.obterPorId(comissaoId);
+//        entidade.setComissao(comissao);
+        entidade.setUsuario(usuario);
         entidadeService.incluir(entidade);
 
         model.addAttribute("id", entidade.getId());
 
-        return index(model, null);
+        return index(model, usuario);
     }
     
     @GetMapping(value = "/entidades/cadastro")
@@ -61,7 +62,7 @@ public class EntidadeController {
     }
     
     @GetMapping(value = "/entidades/{id}/excluir")
-    public String excluir(Model model, @PathVariable Integer id) {
+    public String excluir(Model model, @PathVariable Integer id, @SessionAttribute("user") Usuario usuario) {
 
         try{
             entidadeService.excluir(id);
@@ -69,7 +70,7 @@ public class EntidadeController {
             model.addAttribute("mensagem", "Impossível realizar a exclusão deste solicitante!!!");
         }
 
-        return this.index(model, null);
+        return this.index(model, usuario);
         
     }
 }

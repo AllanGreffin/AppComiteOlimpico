@@ -56,7 +56,7 @@ public class AtletaLoader implements ApplicationRunner {
             comissao.setUsuario(usuario);
             comissaoService.incluir(comissao);
             
-            entidade.setComissao(comissao);
+//            entidade.setComissao(comissao);
             entidadeService.incluir(entidade);
             
             Ginastica ginastica = new Ginastica("Flamengo", "Solo", 10, "Larissa", false, "01/01/1991", comissao);

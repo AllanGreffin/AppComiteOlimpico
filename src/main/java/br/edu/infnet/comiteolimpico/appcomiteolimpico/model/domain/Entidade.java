@@ -20,9 +20,9 @@ public class Entidade {
     private String Nome;
     private String Continente;
     private long Populacao;
-    @OneToOne(cascade = CascadeType.DETACH) 
-    @JoinColumn(name = "idComissao")
-    private Comissao Comissao;
+//    @OneToOne(cascade = CascadeType.DETACH) 
+//    @JoinColumn(name = "idComissao")
+//    private Comissao Comissao;
     @ManyToOne
     @JoinColumn(name = "idUsuario")
     private Usuario usuario;
@@ -68,13 +68,13 @@ public class Entidade {
         this.Populacao = Populacao;
     }
 
-    public Comissao getComissao() {
-        return Comissao;
-    }
+//    public Comissao getComissao() {
+//        return Comissao;
+//    }
 
-    public void setComissao(Comissao Comissao) {
-        this.Comissao = Comissao;
-    }
+//    public void setComissao(Comissao Comissao) {
+//        this.Comissao = Comissao;
+//    }
 
     public Usuario getUsuario() {
         return usuario;
