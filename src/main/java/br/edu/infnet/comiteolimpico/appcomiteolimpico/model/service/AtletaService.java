@@ -27,8 +27,13 @@ public class AtletaService {
 	}
 	
 	public List<Atleta> obterLista(Usuario usuario){
+            List<Atleta> result;
+            if(usuario.isAdmin()){
+                result = (List<Atleta>) atletaRepository.findAllOrderByNome();
+            }else{
+                result = (List<Atleta>) atletaRepository.findAll(usuario.getId());
+            }    
             
-            List<Atleta> result = (List<Atleta>) atletaRepository.findAll(usuario.getId());
             Collections.sort(result, new Comparator<Atleta>() {
                 public int compare(final Atleta object1, final Atleta object2) {
                     return object1.getNome().compareToIgnoreCase(object2.getNome());

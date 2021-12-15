@@ -12,4 +12,7 @@ public interface GinasticaRepository extends CrudRepository<Ginastica, Integer> 
 
     @Query("from Ginastica g where g.usuario.id =:id")
     public List<Ginastica> findAll(Integer id);
+    
+    @Query("from Ginastica g")
+    public List<Ginastica> findAllOrderByNome();
 }

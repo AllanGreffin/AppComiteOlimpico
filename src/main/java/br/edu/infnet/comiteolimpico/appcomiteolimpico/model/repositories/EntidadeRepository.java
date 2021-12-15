@@ -12,4 +12,7 @@ public interface EntidadeRepository extends CrudRepository<Entidade, Integer> {
 
     @Query("from Entidade e where e.usuario.id =:id")
     public List<Entidade> findAll(Integer id);
+    
+    @Query("from Entidade e")
+    public List<Entidade> findAllOrderByNome();
 }

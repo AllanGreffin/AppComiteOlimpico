@@ -29,7 +29,12 @@ public class ComissaoService {
     }
 
     public List<Comissao> obterLista(Usuario usuario){
-        List<Comissao> result =  (List<Comissao>) comissaoRepository.findAll(usuario.getId());
+        List<Comissao> result;
+        if(usuario.isAdmin()){
+            result = (List<Comissao>) comissaoRepository.findAllOrderByNome();
+        }else{
+            result = (List<Comissao>) comissaoRepository.findAll(usuario.getId());
+        }
         Collections.sort(result, new Comparator<Comissao>() {
             public int compare(final Comissao object1, final Comissao object2) {
                 return object1.getNome().compareToIgnoreCase(object2.getNome());

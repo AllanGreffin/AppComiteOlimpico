@@ -30,8 +30,14 @@ public class EntidadeService {
     }
 
     public List<Entidade> obterLista(Usuario usuario){
-            
-        List<Entidade> result = (List<Entidade>) entidadeRepository.findAll(usuario.getId());
+        List<Entidade> result;
+        if(usuario.isAdmin()){
+            result = (List<Entidade>) entidadeRepository.findAllOrderByNome();
+        }else{
+            result = (List<Entidade>) entidadeRepository.findAll(usuario.getId());
+        }    
+        
+        
         Collections.sort(result, new Comparator<Entidade>() {
             public int compare(final Entidade object1, final Entidade object2) {
                 return object1.getNome().compareToIgnoreCase(object2.getNome());

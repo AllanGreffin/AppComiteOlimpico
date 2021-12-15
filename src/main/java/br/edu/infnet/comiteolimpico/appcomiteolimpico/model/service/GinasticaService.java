@@ -30,8 +30,14 @@ public class GinasticaService {
     }
 
     public List<Ginastica> obterLista(Usuario usuario){
-            
-        List<Ginastica> result = (List<Ginastica>) ginasticaRepository.findAll(usuario.getId());
+        List<Ginastica> result;
+        if(usuario.isAdmin()){
+            result = (List<Ginastica>) ginasticaRepository.findAllOrderByNome();
+        }else{
+            result = (List<Ginastica>) ginasticaRepository.findAll(usuario.getId());
+        }        
+        
+        
         Collections.sort(result, new Comparator<Ginastica>() {
             public int compare(final Ginastica object1, final Ginastica object2) {
                 return object1.getNome().compareToIgnoreCase(object2.getNome());

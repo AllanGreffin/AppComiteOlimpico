@@ -12,4 +12,7 @@ public interface SurfeRepository extends CrudRepository<Surfe, Integer> {
 
     @Query("from Surfe s where s.usuario.id =:id")
     public List<Surfe> findAll(Integer id);
+    
+    @Query("from Surfe s")
+    public List<Surfe> findAllOrderByNome();
 }

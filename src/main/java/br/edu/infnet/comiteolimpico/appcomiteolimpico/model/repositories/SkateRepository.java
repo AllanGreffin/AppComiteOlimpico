@@ -12,4 +12,7 @@ public interface SkateRepository extends CrudRepository<Skate, Integer> {
 
     @Query("from Skate s where s.usuario.id =:id")
     public List<Skate> findAll(Integer id);
+    
+    @Query("from Skate s")
+    public List<Skate> findAllOrderByNome();
 }

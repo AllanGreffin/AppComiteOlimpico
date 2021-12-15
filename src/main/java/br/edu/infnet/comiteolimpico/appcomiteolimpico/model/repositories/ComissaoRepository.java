@@ -12,4 +12,7 @@ public interface ComissaoRepository extends CrudRepository<Comissao, Integer> {
 
     @Query("from Comissao c where c.usuario.id =:id")
     public List<Comissao> findAll(Integer id);
+    
+    @Query("from Comissao c")
+    public List<Comissao> findAllOrderByNome();
 }

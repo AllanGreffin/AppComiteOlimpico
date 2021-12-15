@@ -10,4 +10,7 @@ public interface AtletaRepository extends CrudRepository<Atleta, Integer> {
 
     @Query("from Atleta a where a.usuario.id =:id")
     public List<Atleta> findAll(Integer id);
+    
+    @Query("from Atleta a")
+    public List<Atleta> findAllOrderByNome();
 }

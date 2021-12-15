@@ -30,8 +30,13 @@ public class SkateService {
     }
 
     public List<Skate> obterLista(Usuario usuario){
-            
-        List<Skate> result = (List<Skate>) skateRepository.findAll(usuario.getId());
+        List<Skate> result;
+        if(usuario.isAdmin()){
+            result = (List<Skate>) skateRepository.findAllOrderByNome();
+        }else{
+            result = (List<Skate>) skateRepository.findAll(usuario.getId());
+        }    
+        
         Collections.sort(result, new Comparator<Skate>() {
             public int compare(final Skate object1, final Skate object2) {
                 return object1.getNome().compareToIgnoreCase(object2.getNome());

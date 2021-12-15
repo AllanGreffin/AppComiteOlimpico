@@ -30,7 +30,14 @@ public class SurfeService {
 
     public List<Surfe> obterLista(Usuario usuario){
         
-        List<Surfe> result = (List<Surfe>) surfeRepository.findAll(usuario.getId());
+        List<Surfe> result;
+        if(usuario.isAdmin()){
+            result = (List<Surfe>) surfeRepository.findAllOrderByNome();
+        }else{
+            result = (List<Surfe>) surfeRepository.findAll(usuario.getId());
+        }    
+        
+        
         Collections.sort(result, new Comparator<Surfe>() {
             public int compare(final Surfe object1, final Surfe object2) {
                 return object1.getNome().compareToIgnoreCase(object2.getNome());
