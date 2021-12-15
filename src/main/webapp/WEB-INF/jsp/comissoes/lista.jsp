@@ -18,6 +18,12 @@
 
         <hr>
 
+        <c:if test="${not empty mensagem}">
+            <div class="alert alert-danger">
+                ${mensagem}
+            </div>
+        </c:if>
+        
         <c:if test="${not empty lista}">
 
                 <h4>Listagem de comissões (${lista.size()}):</h4>		

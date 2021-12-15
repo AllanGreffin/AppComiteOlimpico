@@ -65,9 +65,20 @@ public class EntidadeController {
     public String excluir(Model model, @PathVariable Integer id, @SessionAttribute("user") Usuario usuario) {
 
         try{
-            entidadeService.excluir(id);
+            List<Comissao> comissoes = comissaoService.obterLista(usuario);
+            boolean hasComissao = false;
+            for(Comissao comissao : comissoes){
+                if(comissao.getEntidade().getId() == id){
+                    model.addAttribute("mensagem", "Impossível realizar a exclusão de uma Entidade vinculada à uma Comissão!");
+                    hasComissao = true;
+                    break;
+                }
+            }
+            if(hasComissao == false){
+                entidadeService.excluir(id);
+            }
         }catch(Exception e){
-            model.addAttribute("mensagem", "Impossível realizar a exclusão deste solicitante!!!");
+            model.addAttribute("mensagem", "Impossível realizar a exclusão deste item!!!");
         }
 
         return this.index(model, usuario);

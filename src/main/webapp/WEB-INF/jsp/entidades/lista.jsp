@@ -18,9 +18,9 @@
 
                 <hr>
             
-		<c:if test="${not empty nome}">
-			<div class="alert alert-success">
-				 <strong>Confirmação!</strong> Usuário ${nome} cadastrado com sucesso!!!
+		<c:if test="${not empty mensagem}">
+			<div class="alert alert-danger">
+				 ${mensagem}
 			</div>
 		</c:if>
 		

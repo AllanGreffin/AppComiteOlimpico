@@ -63,9 +63,13 @@ public class ComissaoController {
     public String excluir(Model model, @PathVariable Integer id, @SessionAttribute("user") Usuario usuario) {
 
         try{
-            comissaoService.excluir(id);
+            if(comissaoService.obterPorId(id).getAtletas().size() > 0){
+                model.addAttribute("mensagem", "Impossível realizar a exclusão de uma Comissão vinculada à algum Atleta!");
+            }else{
+                comissaoService.excluir(id);
+            }
         }catch(Exception e){
-            model.addAttribute("mensagem", "Impossível realizar a exclusão deste solicitante!!!");
+            model.addAttribute("mensagem", "Impossível realizar a exclusão deste item!!!");
         }
 
         return this.index(model, usuario);
