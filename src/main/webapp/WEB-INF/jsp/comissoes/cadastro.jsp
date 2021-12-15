@@ -28,7 +28,13 @@
                 </c:forEach>
             </select>
             
-            <button class="btn btn-primary" type="submit">Cadastrar</button>
+            <c:if test="${entidades.size() > 0}">
+                   <button class="btn btn-primary" type="submit">Cadastrar</button>
+            </c:if>
+            
+            <c:if test="${entidades.size() == 0}">
+                   Necessário criar uma comissão para conseguir adicionar um atleta
+            </c:if>       
         </form>
     </div>
 </body>

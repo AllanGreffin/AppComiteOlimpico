@@ -61,7 +61,7 @@
 	  	</c:if>
 	  			
 	  	<c:if test="${empty lista}">
-	  		<h4>Não existem usuários cadastrados!</h4>
+	  		<h4>Não existem atletas cadastrados!</h4>
 	  	</c:if>
 	</div>
 </body>

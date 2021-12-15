@@ -31,6 +31,9 @@
 			        <th>Email</th>
 			        <th>Senha</th>
 			        <th>Admin</th>
+                                <th>Entidades</th>
+                                <th>Comissões</th>
+                                <th>Atletas</th>
 			        <c:if test="${user.admin}">
 			        	<th></th>
 			        </c:if>
@@ -44,6 +47,9 @@
 				        <td>${u.email}</td>
                                         <td>${u.senha}</td>
                                         <td>${u.admin}</td>
+                                        <td>${u.entidades.size()}</td>
+                                        <td>${u.comissoes.size()}</td>
+                                        <td>${u.atletas.size()}</td>
 				        <c:if test="${user.admin}">
 				        	<td><a href="/usuario/${u.id}/excluir">
 							<c:choose>
