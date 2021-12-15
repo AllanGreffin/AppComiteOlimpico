@@ -46,16 +46,10 @@
 				        <td>${e.nome}</td>
                                         <td>${e.continente}</td>
                                         <td>${e.populacao}</td>
-				        <c:if test="${user.admin}">
-                                            <td><a href="/entidades/${e.id}/excluir">
-                                                <%--<c:choose>--%>
-                                                        <%--<c:when test = "${user.id != e.id}">--%>
-                                                        Excluir
-                                                        <%--</c:when>--%>
-                                                <%--</c:choose>--%>
-                                            </a>
-                                            </td>
-				        </c:if>
+                                        <td><a href="/entidades/${e.id}/excluir">
+                                            Excluir
+                                        </a>
+                                        </td>
 				      </tr>
 			      </c:forEach>
 			    </tbody>

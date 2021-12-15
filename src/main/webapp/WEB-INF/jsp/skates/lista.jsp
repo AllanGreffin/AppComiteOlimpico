@@ -54,17 +54,10 @@
                                         <td>${a.rolamentoPreferido}</td>
                                         <td>${a.disputaXGames}</td>
                                         <td>${a.calcado}</td>
-				        <c:if test="${user.admin}">
-				        	<td><a href="/skates/${a.id}/excluir">
-							<%--<c:choose>--%>
-								<%--<c:when test = "${user.id != u.id}">--%>
-								Excluir
-								<%--</c:when>--%>
-							<%--</c:choose>--%>
-				        	</a>
-				        	</td>
-				        	
-				        </c:if>
+                                        <td><a href="/skates/${a.id}/excluir">
+                                            Excluir
+                                        </a>
+                                        </td>
 				      </tr>
 			      </c:forEach>
 			    </tbody>
